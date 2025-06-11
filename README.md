@@ -33,7 +33,7 @@ Include screenshots of your website wireframe here. Make sure the wireframe is c
 In addition to the screenshots, you can also a link to your wireframe file (if you used an online tool to create it). Make sure the link is accessible to the teaching team (check using an incognito window). This is not a replacement for the screenshots, but an additional resource for the teaching team to understand your wireframe.
 
 
-
+The link to view my wireframe you can find in the wireframe.md file or down below:
 Wireframe (figma) link: https://www.figma.com/design/yUPgKlDHrvF06AVftP6Pj2/Untitled?node-id=15-45&t=clw9Ozc9xLgvLHUE-1
 
 
