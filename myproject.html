@@ -3,127 +3,536 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikolay Deinego Portfolio - Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #C7D3CA;
+            
+        }
+        .container{
+            width: 1440px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .white_frame{
+position: absolute;
+width: 1326px;
+height: 7490px;
+left: 37px;
+top: 99px;
+
+background: #F8F8F8;
+
+        }
+        #banner{
+position: absolute;
+width: 1326px;
+height: 705px;
+left: 37px;
+top: 99px;
+
+
+        }
+        #mytitle{
+position: absolute;
+width: 457px;
+height: 124px;
+left: calc(50% - 457px/2 + 0.5px);
+top: 840px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 124px;
+color: #000000;
+        }
+        #conwaytitle{
+
+        }
+        #conwaydescript{
+position: absolute;
+width: 1129px;
+height: 1541px;
+left: 67px;
+top: 1210px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+
+color: #000000;
+
+
+        }
+
+        #photogameof{
+position: absolute;
+width: 583.59px;
+height: 569px;
+left: 745px;
+top: 1117px;
+background: url(photo_2025-06-09_18-24-23.jpg);
+border-radius: 71px;
+
+        }
+        .line1{
+position: absolute;
+width: 1326px;
+height: 25px;
+left: 37px;
+top: 2688px;
+
+background: #C7D3CA;
+
+        }
+        .linkgamelife{
+position: absolute;
+width: 1129px;
+height: 1541px;
+left: 67px;
+top: 2480px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 800;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+        }
+        #photosnake{
+
+position: absolute;
+width: 618.35px;
+height: 657px;
+left: 56px;
+top: 2822px;
+
+background: url(photo_2025-06-09_18-24-25.jpg);
+border-radius: 90px;
+
+        }
+        #conwaytitle{
+            position: absolute;
+width: 1129px;
+height: 1541px;
+left: 67px;
+top: 1070px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+
+color: #000000;
+
+
+        }
+        #titlesnake{
+
+            position: absolute;
+width: 674px;
+height: 737px;
+right: 77px;
+top: 2810px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+
+color: #000000;
+        }
+        #snakedescript{
+position: absolute;
+width: 674px;
+height: 737px;
+right: 77px;
+top: 2950px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+color: #000000;
+        }
+        #learnsnake{
+position: absolute;
+width: 787px;
+height: 603px;
+left: 107px;
+top: 3549px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+        }
+        #snakelink{
+            position: absolute;
+width: 787px;
+height: 603px;
+left: 107px;
+top: 4030px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+        }
+        .line2{
+position: absolute;
+width: 1326px;
+height: 25px;
+left: 37px;
+top: 4193px;
+
+background: #C7D3CA;
+
+        }
+
+        .vacuum{
+position: absolute;
+width: 1113px;
+height: 1809px;
+left: 79px;
+top: 4314px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+        }
+        #vacuumphoto{
+position: absolute;
+width: 644.8px;
+height: 676px;
+left: 693px;
+top: 4314px;
+
+background: url(image.png);
+
+        }
+        #exper{
+position: absolute;
+width: 655px;
+height: 103px;
+left: calc(50% - 655px/2 - 24.5px);
+top: 6346px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 103px;
+
+color: #000000;
+
+
+        }
+        #expertext{
+position: absolute;
+width: 1241px;
+height: 469px;
+left: calc(50% - 1241px/2 - 20.5px);
+top: 6492px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 67px;
+
+color: #000000;
+
+
+        }
+
+                 #iconabout{
+position: absolute;
+width: 1032px;
+height: 34px;
+left: 275px;
+top: 7168px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 72px;
+
+color: #000000;
+
+
+        }
+        #iconhobby{
+position: absolute;
+width: 1032px;
+height: 34px;
+left: 1035px;
+top: 7168px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 72px;
+
+color: #000000;
+
+
+        }
+        #iconproject{
+            position: absolute;
+width: 1032px;
+height: 34px;
+left: 650px;
+top: 7168px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 72px;
+
+color: #000000;
+
+        }
+        #photo_about{
+position: absolute;
+width: 225px;
+height: 225px;
+left: 212px;
+top: 7300px;
+
+background: #465A54;
+border-radius: 43px;
+
+        }
+        #photo_projects{
+position: absolute;
+width: 238px;
+height: 227px;
+left: 591px;
+top: 7300px;
+
+background: #465A54;
+border-radius: 43px;
+
+        }
+        #photo_hobby{
+position: absolute;
+width: 238px;
+height: 227px;
+left: 975px;
+top: 7300px;
+
+background: #465A54;
+border-radius: 43px;
+
+        }
+
+                .brown_frame{
+position: absolute;
+width: 1682px;
+height: 517px;
+left: -122px;
+top: 7589px;
+
+background: #69635F;
+
+        }
+        #contact{
+position: absolute;
+width: 542px;
+height: 833px;
+left: calc(50% - 542px/2 - 310px);
+top: 7683px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 62px;
+
+color: #FFFFFF;
+
+
+        }
+
+
+
+    </style>
 </head>
 <body>
-    <img src="images/photo_collage_1.jpg"> <!--ADD alt.text-->
-    <h2>"MY PROJECTS"</h2>
-    <h3>Title: Conway's Game of Life </h3>
-    <p>
-Description:
-This project is a visual simulation of 
-Conway's Game of Life, the famous cellular 
-automaton created by mathematician John 
-Conway.
+    <div class="container">
+        <div class="white_frame"></div> 
+        <div class="line1"></div>
+        <div class="line2"></div>
+            <img src="images/photo_collage_1.jpg" id="banner"> <!--ADD alt.text-->
+    <h2 id="mytitle">"MY PROJECTS"</h2>
+    <h3 id="conwaytitle"><strong>Title: Conway's Game of Life</strong> </h3>
+    <p id="conwaydescript">
+<strong>Description:</strong><br>
+This project is a visual simulation of <br>
+Conway's Game of Life, the famous cellular <br>
+automaton created by mathematician John <br>
+Conway.<br><br><br>
 
 
-The game is played according to simple rules:
-A cell survives, dies, or is born depending on the number of neighbors.
-The system evolves automatically with each new generation.
-The visual result demonstrates emergent complexity: highly dynamic
- structures can emerge, stabilize or disappear from simple patterns.
+The game is played according to simple rules:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- A cell survives, dies, or is born depending on the number of neighbors.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- The system evolves automatically with each new generation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- The visual result demonstrates emergent complexity: highly dynamic<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structures can emerge, stabilize or disappear from simple patterns.<br><br>
 
-What I learned:
-Working with two-dimensional arrays and modeling loops
-Implementing Conway rules in Python 
-Managing screen updates with Turtle graphics to improve performance
+<strong>What I learned:</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Working with two-dimensional arrays and modeling loops<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Implementing Conway rules in Python <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Managing screen updates with Turtle graphics to improve performance<br><br>
 
-Technology Stack: Python, Turtle
+<strong>Technology Stack:</strong> Python, Turtle
     </p>
-        <p>
+        <p class="linkgamelife">
         GitHub Repo: <a href="https://github.com/Deinick/deinick.github.io/tree/main/My_Projects/Conways_Game_Of_Life" target="_blank">Conway's Game of Life </a>
     </p>
-    <img src="images/photo_gol.jpg"><!--ADD alt.text-->
-    <h3>Title: Classic Snake game - with turtle graphics</h3>
-    <p>
-Description:
+    <img src="images/photo_gol.jpg" id="photogameof"><!--ADD alt.text-->
+
+    <h3 id="titlesnake"> <strong>Title: Classic Snake game</strong></h3>
+    <p id="snakedescript">
+<strong>Description:</strong><br>
 This is a simple version of the classic Snake 
-game, created in Python using the
- Turtle module. The snake is controlled using 
-the keyboard and moves around the
- grid, aiming to “eat” the red square (food)
- while avoiding the blue blocks (obstacles)
- and the edges of the screen.
-    </p>
-    <p>What I learned:
-Real-time input processing in Python
-Collision detection
-Rendering game objects using turtle
-Managing game state (reset, win/loss conditions).
+game, created in Python using the<br>
+ Turtle module. The snake is controlled using <br>
+the keyboard and moves around the<br>
+ grid, aiming to “eat” the red square (food)<br>
+ while avoiding the blue blocks (obstacles)<br>
+ and the edges of the screen.</p>
+    <p id="learnsnake"><strong>What I learned:</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Real-time input processing in Python<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Collision detection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Rendering game objects using turtle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Managing game state (win/loss conditions).<br><br>
 
-Technology Stack: Python, Turtle
+<strong>Technology Stack:</strong> Python, Turtle
     </p>
-    <p>GitHub Repo: <a href="https://github.com/Deinick/deinick.github.io/tree/main/My_Projects/Classic_Snake_Game_With_Turtle_Graphics" target="_blank">Snake game </a></p>
-    <img src="images/photo_snake.jpg"><!--ADD alt.text-->
-
-    <h3>Title: Smart Vacuum Cleaner</h3>
+    <p id="snakelink"><strong>GitHub Repo:</strong> <a href="https://github.com/Deinick/deinick.github.io/tree/main/My_Projects/Classic_Snake_Game_With_Turtle_Graphics" target="_blank">Snake game </a></p>
+    <img src="images/photo_snake.jpg" id="photosnake"><!--ADD alt.text-->
+    <div class="vacuum">
+           <h3>Title: Smart Vacuum Cleaner</h3>
 
     <p>
-Description:
-This project models a smart robot vacuum
- cleaner navigating a 2D environment
- filled with walls and dirt using AI search 
-algorithms. The robot can use BFS, DFS,
- UCS, Greedy, or A* to decide how to reach 
-dirty rooms and clean them efficiently.
+<strong>Description:</strong><br>
+This project models a smart robot vacuum<br>
+ cleaner navigating a 2D environment<br>
+ filled with walls and dirt using AI search <br>
+algorithms. The robot can use BFS, DFS,<br>
+ UCS, Greedy, or A* to decide how to reach <br>
+dirty rooms and clean them efficiently.<br><br>
 
 
-Key features:
-Full-featured graphical interface with manual control
-Support for multiple search strategies
-Customization of cost/heuristics (Manhattan, Euclid, left/upward bias)
-Color visualization of explored states and final paths
-Modular codebase utilizing an agent/environment architecture.
+<strong>Key features:</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Full-featured graphical interface with manual control<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Support for multiple search strategies<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Customization of cost/heuristics (Manhattan, Euclid, left/upward bias)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Color visualization of explored states and final paths<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Modular codebase utilizing an agent/environment architecture.<br><br>
 
-What I learned:
-Designing and visualizing the behavior of AI agents in two-dimensional 
-      environments
-Implementing and comparing multiple search strategies (BFS, A*, Greedy)
-Creating intelligent cost functions and heuristics
-Developing a GUI using tkinter in Python
+<strong>What I learned:</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Designing and visualizing the behavior of AI agents in two-dimensional <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      environments<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Implementing and comparing multiple search strategies (BFS, A*, Greedy)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Creating intelligent cost functions and heuristics<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Developing a GUI using tkinter in Python<br><br>
 
-Technology Stack: Python, tkinter, object-oriented programming, AI search 
+<strong>Technology Stack:</strong> Python, tkinter, object-oriented programming, AI search 
 algorithms
     </p>
-    <p>GitHub Repo: <a href="https://github.com/Deinick/deinick.github.io/tree/main/My_Projects/Smart_Vacuum_Cleaner" target="_blank">Smart Vacuum Cleaner </a></p>
-    <img src="images/photo_vac_clean.png"><!--ADD alt.text-->
-    <h2>“Programming Experience” </h2>
-    <p>                                                        I’m comfortable working with:
-Python – for scripting, automation, simulations, and AI projects
-C++ – for systems programming, data structures, and performance-intensive tasks
-HTML – for building and structuring websites
+    <p><strong>GitHub Repo:</strong> <a href="https://github.com/Deinick/deinick.github.io/tree/main/My_Projects/Smart_Vacuum_Cleaner" target="_blank">Smart Vacuum Cleaner </a></p>
+
+    </div>
+
+    <img src="images/photo_vac_clean.png" id="vacuumphoto"><!--ADD alt.text-->
+    <h2 id="exper">“Programming Experience” </h2>
+    <p id="expertext">       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                 I’m comfortable working with:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Python – for scripting, automation, simulations, and AI projects<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- C++ – for systems programming, data structures, and performance-intensive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    tasks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- HTML – for building and structuring websites<br><br>
 
 I’m currently focused on growing as a creative developer and learning how to combine
  AI, interactivity, and design into functional web and software experiences.</p>
-    <div class="ABOUT">
+
+     <div class="ABOUT">
         <a href="index.html">
-            <img src="images/photo_about.jpg">
-            <p>About</p>
+            <img src="images/photo_about.jpg" id="photo_about"><!--ADD alt.text-->
+            <p id="iconabout">About</p>
         </a>
     </div>
 
     <div class="HOBBIES">
         <a href="hobbies.html">
-            <img src="images/photo_hobby.jpg">
-            <p>Hobbies</p>
+            <img src="images/photo_hobby.jpg" id="photo_hobby"><!--ADD alt.text-->
+            <p id="iconhobby">Hobbies</p>
         </a>
     </div>
     <div class="PROJECTS">
         <a href="myproject.html">
-            <img src="images/photo_projects.jpg">
-            <p>Projects</p>
+            <img src="images/photo_projects.jpg" id="photo_projects"><!--ADD alt.text-->
+            <p id="iconproject">Projects</p>
         </a>
     </div>
-    <h4>Email: <a href="mailto:nikolaydeinego@gmail.com">Email Me</a></h4>
+    <div class="brown_frame"></div>
+
+    <div id="contact">    <h4>Email: <a href="mailto:nikolaydeinego@gmail.com">Email Me</a></h4>
     <h4>
         Facebook: <a href="https://www.facebook.com/nick.deinego" target="_blank">Visit my profile</a>
     </h4>
-    <h4> GitHub: <a href="https://github.com/Deinick" target="_blank">My GitHub</a> </h4>
+    <h4> GitHub: <a href="https://github.com/Deinick" target="_blank">My GitHub</a> </h4></div>
     
 
-
-
-
-
-    
+    </div>
 </body>
 </html>
