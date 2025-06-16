@@ -3,60 +3,356 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikolay Deinego Portfolio - Hobbies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap" rel="stylesheet">
+    <style> 
+        body {
+            position: relative;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #C7D3CA;
+            
+        }
+
+        .container{
+            width: 1440px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #banner{
+            position: absolute;
+            width: 1326px;
+            height: 705px;
+            left: 56px;
+            top: 111px;
+
+
+        }
+
+        .white_frame{
+            position: absolute;
+            width: 1326px;
+            height: 6468px;
+            left: 56px;
+            top: 111px;
+
+            background: #F8F8F8;
+        }
+        #artistme{
+            position: absolute;
+            width: 372px;
+            height: 124px;
+            left: calc(50% - 372px/2 + 31px);
+            top: 853px;
+
+            font-family: 'Inknut Antiqua';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 124px;
+            color: #000000;
+        }
+        #Drawing{
+            position: absolute;
+            width: 185px;
+            height: 103px;
+            left: 626px;
+            top: 1045px;
+
+            font-family: 'Inknut Antiqua';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 103px;
+
+            color: #000000;
+        }
+
+        #collage_art{
+position: absolute;
+width: 657px;
+height: 877px;
+left: 94px;
+top: 1212px;
+
+background: url(photo_2025-06-09_17-28-28.jpg);
+border-radius: 49px;
+
+        }
+
+        #art_text{
+position: absolute;
+width: 6005px;
+height: 940px;
+left: 788px;
+top: 1208px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 62px;
+
+color: #000000;
+
+        }
+
+        #video{
+position: absolute;
+width: 912px;
+height: 309px;
+left: calc(50% - 912px/2);
+top: 2300px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 103px;
+
+color: #000000;
+
+
+        }
+
+        #video_text{
+position: absolute;
+width: 1325px;
+height: 1204px;
+left: calc(50% - 1325px/2 + 0.5px);
+top: 2544px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+text-align: center;
+
+color: #000000;
+
+
+        }
+
+        #collage_photo{
+position: absolute;
+width: 1325.33px;
+height: 994px;
+left: 58px;
+top: 3684px;
+
+background: url(photo_2025-06-09_17-28-26.jpg);
+        }
+        #piano{
+position: absolute;
+width: 128px;
+height: 309px;
+left: calc(50% - 128px/2 - 1px);
+top: 4813px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 103px;
+
+color: #000000;
+        }
+
+        #piano_text{
+position: absolute;
+width: 1158px;
+height: 642px;
+left: calc(50% - 1158px/2 - 1px);
+top: 5000px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 67px;
+text-align: center;
+
+color: #000000;
+
+
+        }
+
+         #iconabout{
+position: absolute;
+width: 1032px;
+height: 34px;
+left: 275px;
+top: 6100px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 72px;
+
+color: #000000;
+
+
+        }
+        #iconhobby{
+position: absolute;
+width: 1032px;
+height: 34px;
+left: 1035px;
+top: 6100px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 72px;
+
+color: #000000;
+
+
+        }
+        #iconproject{
+            position: absolute;
+width: 1032px;
+height: 34px;
+left: 650px;
+top: 6100px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 72px;
+
+color: #000000;
+
+        }
+        #photo_about{
+position: absolute;
+width: 225px;
+height: 225px;
+left: 212px;
+top: 6200px;
+
+background: #465A54;
+border-radius: 43px;
+
+        }
+        #photo_projects{
+position: absolute;
+width: 238px;
+height: 227px;
+left: 591px;
+top: 6200px;
+
+background: #465A54;
+border-radius: 43px;
+
+        }
+        #photo_hobby{
+position: absolute;
+width: 238px;
+height: 227px;
+left: 975px;
+top: 6200px;
+
+background: #465A54;
+border-radius: 43px;
+
+        }
+
+                .brown_frame{
+position: absolute;
+width: 1682px;
+height: 517px;
+left: -122px;
+top: 6550px;
+
+background: #69635F;
+
+        }
+
+        #contact{
+position: absolute;
+width: 542px;
+height: 833px;
+left: calc(50% - 542px/2 - 339px);
+top: 6641px;
+
+font-family: 'Inknut Antiqua';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 62px;
+
+color: #FFFFFF;
+
+
+        }
+
+    
+    </style>
 </head>
 <body>
-    <img src="images/photo_collage_1.jpg"> <!--ADD alt.text-->
-    <h2>"ARTIST ME"</h2>
-    <h3>Drawing</h3>
-    <img src="images/photo_collage_art.jpg"><!--ADD alt.text-->
-    <p>Drawing has always been my passion. Ever since I was a child, I’ve had a natural talent for translating the world around me onto paper or canvas. Drawing, in particular, has been more than just a skill — it’s a form of self-expression that fuels my creativity no matter where I am. As an experienced artist, I’ve learned to observe the world from multiple perspectives, which allows me to generate fresh ideas and bring unique visual concepts to life in every project I take on. Art isn't just something I do — it’s a way of thinking, seeing, and communicating.</p>
-    <h3>Video filming, photography, and blogging</h3>
-    <p>Video filming, photography, and blogging are the main directions where I develop and
- dedicate most of my free time. 
+    <div class="container">
+        <div class="white_frame"></div>
+        <div class="brown_frame"></div>
+        <img src="images/photo_collage_1.jpg" id="banner"> <!--ADD alt.text-->
+    <h2 id="artistme">"ARTIST ME"</h2>
+    <h3 id="Drawing">Drawing</h3>
+    <img src="images/photo_collage_art.jpg" id="collage_art"><!--ADD alt.text-->
+    <p id="art_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drawing has always been my passion. <br>Ever since I was a child, I’ve had a natural<br> talent for translating the world around me<br> onto paper or canvas.<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drawing, in particular, has been more<br> than just a skill — it’s a form of<br> self-expression that fuels my creativity no<br> matter where I am. As an experienced artist,<br> I’ve learned to observe the world from<br> multiple perspectives, which allows me to<br> generate fresh ideas and bring unique visual<br> concepts to life in every project I take on.<br> Art isn't just something I do — it’s a way of<br> thinking, seeing, and communicating.</p>
+    <h3 id="video">Video filming, photography, and blogging</h3>
+    <p id="video_text">Video filming, photography, and blogging are the main directions where I develop and<br>&nbsp;dedicate most of my free time. <br>
 
-Capturing moments and visual storytelling have become an integral part of my identity. 
-Over time, picturing scenes, emotions, and atmospheres turned from a hobby into a 
-creative practice I deeply value. Being confident in front of the camera and having a 
-strong sense of performance has always been one of my natural strengths — allowing me 
-not only to create but to connect with audiences through expression, presence, and
- emotion.
-I have solid skills in editing and have worked with:
-Adobe Premiere Pro
-Adobe After Effects
-DaVinci Resolve
-Sony Vegas Pro 19
-Adobe Photoshop
+&nbsp;&nbsp;Capturing moments and visual storytelling have become an integral part of my identity.<br> 
+Over time, picturing scenes, emotions, and atmospheres turned from a hobby into a<br> 
+creative practice I deeply value. Being confident in front of the camera and having a <br>
+strong sense of performance has always been one of my natural strengths — allowing me <br>
+not only to create but to connect with audiences through expression, presence, and<br>
+ emotion.<br>
+I have solid skills in editing and have worked with:<br>
+- Adobe Premiere Pro<br>
+- Adobe After Effects<br>
+- DaVinci Resolve<br>
+- Sony Vegas Pro 19<br>
+- Adobe Photoshop<br>
 These tools have become a regular part of my creative work.</p>
-    <img src="images/photo_collage_photography.jpg"><!--ADD alt.text-->
-    <h3>Piano</h3>
-    <p>Playing the piano has always been one of my favorite hobbies. After graduating from music school at the age of 14, with over seven years of piano training behind me, I began to explore other forms of art — and I quickly realized how deeply my musical background influenced my growth in those areas.
-
-
+    <img src="images/photo_collage_photography.jpg" id="collage_photo"><!--ADD alt.text-->
+    <h3 id="piano">Piano</h3>
+    <p id="piano_text">Playing the piano has always been one of my favorite hobbies. After graduating from music school at the age of 14, with over seven years of piano training behind me, I began to explore other forms of art — and I quickly realized how deeply my musical background influenced my growth in those areas.<br><br><br>
  The discipline, quick thinking, and adaptability developed through mastering complex piano pieces have translated into valuable soft skills. These qualities have helped me thrive not only in creative fields like acting, but also in physically demanding disciplines such as martial arts (karate). Music taught me how to stay composed under pressure, how to persist through challenge, and how to express myself — lessons that continue to shape my personal and artistic journey.</p>
-    <div class="ABOUT">
+     <div class="ABOUT">
         <a href="index.html">
-            <img src="images/photo_about.jpg">
-            <p>About</p>
+            <img src="images/photo_about.jpg" id="photo_about"><!--ADD alt.text-->
+            <p id="iconabout">About</p>
         </a>
     </div>
 
     <div class="HOBBIES">
         <a href="hobbies.html">
-            <img src="images/photo_hobby.jpg">
-            <p>Hobbies</p>
+            <img src="images/photo_hobby.jpg" id="photo_hobby"><!--ADD alt.text-->
+            <p id="iconhobby">Hobbies</p>
         </a>
     </div>
     <div class="PROJECTS">
         <a href="myproject.html">
-            <img src="images/photo_projects.jpg">
-            <p>Projects</p>
+            <img src="images/photo_projects.jpg" id="photo_projects"><!--ADD alt.text-->
+            <p id="iconproject">Projects</p>
         </a>
     </div>
-    <h4>Email: <a href="mailto:nikolaydeinego@gmail.com">Email Me</a></h4>
+    <div class="brown_frame"></div>
+    <div id="contact">
+            <h4>Email: <a href="mailto:nikolaydeinego@gmail.com">Email Me</a></h4>
     <h4>
         Facebook: <a href="https://www.facebook.com/nick.deinego" target="_blank">Visit my profile</a>
     </h4>
     <h4> GitHub: <a href="https://github.com/Deinick" target="_blank">My GitHub</a> </h4>
-    
+
+
+    </div>
 </body>
 </html>
