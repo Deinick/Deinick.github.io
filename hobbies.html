@@ -293,6 +293,27 @@ color: #FFFFFF;
 
 
         }
+    #backToTop {
+                position: fixed;
+                bottom: 40px;
+                right: 50px;
+                background-color: #b35521;
+                color: white;
+                border: none;
+                padding: 6px 10px;    
+                border-radius: 6px;    
+                cursor: pointer;
+                font-size: 16px;       
+                z-index: 1000;
+                }
+                #backToTop img {
+  width: 100px; 
+  height: auto;
+}
+
+#backToTop:hover {
+  background-color: #ffaa00;
+}
 
     
     </style>
@@ -355,5 +376,21 @@ These tools have become a regular part of my creative work.</p>
 
 
     </div>
+         <button onclick="scrollToTop()" id="backToTop"><img src="images/arrow.png" alt="Back to top button"/> <br>BACK TO TOP</button>
+
+  <script>
+    window.onscroll = function () {
+      const button = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
