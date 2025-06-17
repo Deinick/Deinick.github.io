@@ -403,6 +403,27 @@ color: #FFFFFF;
 
 
         }
+        #backToTop {
+                position: fixed;
+                bottom: 40px;
+                right: 65px;
+                background-color: #b35521;
+                color: white;
+                border: none;
+                padding: 6px 10px;    
+                border-radius: 6px;    
+                cursor: pointer;
+                font-size: 16px;       
+                z-index: 1000;
+                }
+                #backToTop img {
+  width: 100px; 
+  height: auto;
+}
+
+#backToTop:hover {
+  background-color: #ffaa00;
+}
 
 
 
@@ -413,7 +434,7 @@ color: #FFFFFF;
         <div class="white_frame"></div> 
         <div class="line1"></div>
         <div class="line2"></div>
-            <img src="images/photo_collage_1.jpg" id="banner"> <!--ADD alt.text-->
+            <img src="images/photo_collage_1.jpg" id="banner" alt="Collage - Nikolay Deinego (4 photos)">
     <h2 id="mytitle">"MY PROJECTS"</h2>
     <h3 id="conwaytitle"><strong>Title: Conway's Game of Life</strong> </h3>
     <p id="conwaydescript">
@@ -440,7 +461,7 @@ The game is played according to simple rules:<br>
         <p class="linkgamelife">
         GitHub Repo: <a href="https://github.com/Deinick/deinick.github.io/tree/main/My_Projects/Conways_Game_Of_Life" target="_blank">Conway's Game of Life </a>
     </p>
-    <img src="images/photo_gol.jpg" id="photogameof"><!--ADD alt.text-->
+    <img src="images/photo_gol.jpg" id="photogameof" alt="Game of Life Interface ScreenShot">
 
     <h3 id="titlesnake"> <strong>Title: Classic Snake game</strong></h3>
     <p id="snakedescript">
@@ -461,7 +482,7 @@ the keyboard and moves around the<br>
 <strong>Technology Stack:</strong> Python, Turtle
     </p>
     <p id="snakelink"><strong>GitHub Repo:</strong> <a href="https://github.com/Deinick/deinick.github.io/tree/main/My_Projects/Classic_Snake_Game_With_Turtle_Graphics" target="_blank">Snake game </a></p>
-    <img src="images/photo_snake.jpg" id="photosnake"><!--ADD alt.text-->
+    <img src="images/photo_snake.jpg" id="photosnake" alt="Classic Snake game Interface ScreenShot">
     <div class="vacuum">
            <h3>Title: Smart Vacuum Cleaner</h3>
 
@@ -496,7 +517,7 @@ algorithms
 
     </div>
 
-    <img src="images/photo_vac_clean.png" id="vacuumphoto"><!--ADD alt.text-->
+    <img src="images/photo_vac_clean.png" id="vacuumphoto" alt="Smart Vacuum Cleaner Interface ScreenShot">
     <h2 id="exper">“Programming Experience” </h2>
     <p id="expertext">       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                 I’m comfortable working with:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Python – for scripting, automation, simulations, and AI projects<br>
@@ -508,20 +529,20 @@ I’m currently focused on growing as a creative developer and learning how to c
 
      <div class="ABOUT">
         <a href="index.html">
-            <img src="images/photo_about.jpg" id="photo_about"><!--ADD alt.text-->
+            <img src="images/photo_about.jpg" id="photo_about" alt="Person icon button">
             <p id="iconabout">About</p>
         </a>
     </div>
 
     <div class="HOBBIES">
         <a href="hobbies.html">
-            <img src="images/photo_hobby.jpg" id="photo_hobby"><!--ADD alt.text-->
+            <img src="images/photo_hobby.jpg" id="photo_hobby" alt="Piano titles icon button">
             <p id="iconhobby">Hobbies</p>
         </a>
     </div>
     <div class="PROJECTS">
         <a href="myproject.html">
-            <img src="images/photo_projects.jpg" id="photo_projects"><!--ADD alt.text-->
+            <img src="images/photo_projects.jpg" id="photo_projects" alt="Computer icon button">
             <p id="iconproject">Projects</p>
         </a>
     </div>
@@ -535,5 +556,21 @@ I’m currently focused on growing as a creative developer and learning how to c
     
 
     </div>
+         <button onclick="scrollToTop()" id="backToTop"><img src="images/arrow.png" alt="Back to top button"/> <br>BACK TO TOP</button>
+
+  <script>
+    window.onscroll = function () {
+      const button = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>

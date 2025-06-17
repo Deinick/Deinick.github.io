@@ -358,6 +358,28 @@ color: #000000;
 
 
         }
+        #backToTop {
+                position: fixed;
+                bottom: 40px;
+                right: 80px;
+                background-color: #b35521;
+                color: white;
+                border: none;
+                padding: 6px 10px;    
+                border-radius: 6px;    
+                cursor: pointer;
+                font-size: 16px;       
+                z-index: 1000;
+                }
+                #backToTop img {
+  width: 100px; 
+  height: auto;
+}
+
+#backToTop:hover {
+  background-color: #ffaa00;
+}
+
     </style>
 </head>
 <body>
@@ -368,7 +390,7 @@ color: #000000;
     </div>
     <div class="brown_frame"></div>
     <h1 id="main_title">Nikolay Deinego</h1>
-    <img src="images/photo_collage_1.jpg" id="banner"> <!--ADD alt.text-->
+    <img src="images/photo_collage_1.jpg" id="banner" alt="Collage - Nikolay Deinego (4 photos)">
     <h2 id="who_am_i">“I'm a CS student learning web development
          with the mindset of an artist.</h2>
     <h3 id="combine"> I combine creativity with code and focus on how AI can make everyday life smarter and more human.”</h3>
@@ -376,20 +398,20 @@ color: #000000;
 
     <div class="ABOUT">
         <a href="index.html">
-            <img src="images/photo_about.jpg" id="photo_about"><!--ADD alt.text-->
+            <img src="images/photo_about.jpg" id="photo_about" alt="Person icon button">
             <p id="iconabout">About</p>
         </a>
     </div>
 
     <div class="HOBBIES">
         <a href="hobbies.html">
-            <img src="images/photo_hobby.jpg" id="photo_hobby"><!--ADD alt.text-->
+            <img src="images/photo_hobby.jpg" id="photo_hobby" alt="Piano titles icon button" >
             <p id="iconhobby">Hobbies</p>
         </a>
     </div>
     <div class="PROJECTS">
         <a href="myproject.html">
-            <img src="images/photo_projects.jpg" id="photo_projects"><!--ADD alt.text-->
+            <img src="images/photo_projects.jpg" id="photo_projects" alt="Computer icon button">
             <p id="iconproject">Projects</p>
         </a>
     </div>
@@ -405,7 +427,7 @@ color: #000000;
 
 
     <h2 id="ABOUTME">ABOUT ME</h2>
-    <img src="images/photo_portfolio.jpg" id="photo_portfolio"> <!-- ADD alt.text-->
+    <img src="images/photo_portfolio.jpg" id="photo_portfolio" alt="Photo of Nikolay Deinego (portfolio)">
     <p id="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My name is Nikolay Deinego — a Computer Science student at Simon Fraser University in Canada, an aspiring software developer, and AI researcher. <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With a deep passion for both code and communication, I combine technical precision with creative energy to design systems that not only function, but connect, teach, and inspire. I specialize in translating complex ideas into elegant solutions — whether through software, video, or spoken word. Beyond development, I thrive in roles that involve teaching, presenting, and leading;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I believe knowledge is most powerful when shared. Off-screen, you’ll find me at the piano or in front of a camera, crafting educational and thought-driven content. I'm fluent in two languages, currently studying Chinese, and deeply committed to personal growth, discipline, and creative expression. My path is defined by passion, clarity of vision, and an unwavering pursuit of excellence.</p>
     <div id="content">
             <h4>Email: <a href="mailto:nikolaydeinego@gmail.com">Email Me</a></h4>
@@ -416,6 +438,22 @@ color: #000000;
 
     </div>
     </div>
+      <button onclick="scrollToTop()" id="backToTop"><img src="images/arrow.png" alt="Back to top button"/> <br>BACK TO TOP</button>
+
+  <script>
+    window.onscroll = function () {
+      const button = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
