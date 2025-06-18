@@ -24,6 +24,10 @@ Example (Mini Project):
 `Mini_Project_AI_Declaration_Parsa_Rajabi_123456789.pdf`
 
 
+MY DUSCLOUSRE FORM: Mini_Project_AI_Declaration_Nikolay_Deinego_301624929.pdf
+link: https://github.com/CMPT-276-SUMMER-2025/mini-project-Deinick/blob/main/Mini_Project_AI_Declaration_Nikolay_Deinego_301624929.pdf
+
+
 More detailed submission instructions can be found via the [lab page](https://parsa-rajabi.github.io/CMPT-276/#/labs).
 
 ## Task 1: Website Wireframe
