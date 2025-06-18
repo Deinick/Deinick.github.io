@@ -293,11 +293,11 @@ color: #FFFFFF;
 
 
         }
-    #backToTop {
+        #backToTop {
                 position: fixed;
                 bottom: 40px;
-                right: 50px;
-                background-color: #b35521;
+                right: 40px;
+                background-color: #465A54;
                 color: white;
                 border: none;
                 padding: 6px 10px;    
@@ -312,12 +312,13 @@ color: #FFFFFF;
 }
 
 #backToTop:hover {
-  background-color: #ffaa00;
+  background-color: #159E75;
 }
 
     
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="white_frame"></div>
@@ -377,20 +378,5 @@ These tools have become a regular part of my creative work.</p>
 
     </div>
          <button onclick="scrollToTop()" id="backToTop"><img src="images/arrow.png" alt="Back to top button"/> <br>BACK TO TOP</button>
-
-  <script>
-    window.onscroll = function () {
-      const button = document.getElementById("backToTop");
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        button.style.display = "block";
-      } else {
-        button.style.display = "none";
-      }
-    };
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
