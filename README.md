@@ -47,7 +47,10 @@ For this task, please include your answers for the questions described in [mini-
 
 ### Q1
 
-[Insert answer here]
+Repository Link:
+GitHub Repository = (https://github.com/Deinick/deinick.github.io)
+Live Website:
+Live Site on GitHub Pages = (https://deinick.github.io/)
 
 ### Q2
 
