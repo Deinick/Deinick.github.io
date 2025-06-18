@@ -47,23 +47,29 @@ For this task, please include your answers for the questions described in [mini-
 
 ### Q2
 
-[Insert answer here]
+This website is my professional portfolio. It consists of 3 pages: Home page, Hobby page, and Projects page. Each page consists of a banner - a collage of my photos. On the home page, you can see a brief bio of me, and buttons to navigate between pages (they look interactive and similar, and the user will not understand their purpose). These buttons will also be found on other pages. At the end, you can see my contact information - I've included 3 of them for contact, profile view, etc.
+
+On the project page, you can learn more about the projects I've done (as part of class assignments while at SFU). There are titles, screenshots, a brief description, and what I learned, which is a good indication of my professional development. Additionally, viewers can test these programs as they are freely available.
+
+One of my favorite pages is the hobby page, where I have developed the most outside of my professional life. There, the reader can see my creative side and realize that my creativity is applied almost everywhere I go. I included my works and a brief description of every hobby.
+
 
 ### Q3
 
-[Insert answer here]
+A favicon is a small icon of the webpage that usually has a 16x16 or 32x32 size. In my opinion favicon is needed to indicate professionalism and also give a website uniqueness. From the user’s perspective, it is easier for him/her to navigate between pages.
 
 ### Q4
 
-[Insert answer here]
+GitHub Pages is an interactive and free way to set up websites under the github.io domains. All information is stored in the specific repository to which this website is connected, so it is not only easy to manage data, but also to launch a website for free
 
 ### Q5
 
-[Insert answer here]
+GitHub Actions is a way to test and develop projects and automate a framework. In .yml files, all of the information is stored, and the GitHub Action workflow is kept.
 
 ### Q6
 
-[Insert answer here]
+For this website, I used JS, CSS, and HTML. Why exactly this pack? This was my first time dealing with creating a webpage. They are very convenient and easy to use, especially for beginners. HTML allowed me to build a skeleton for my website - add all text, images, and buttons. CSS made this look more polished. JavaScript made my website look more modern and interactive ( so it is not just a pure boring scrolling).
+
 
 ## Task 3: Github Video
 
