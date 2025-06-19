@@ -84,22 +84,24 @@ For this task, please include your answers for the questions described in [mini-
 
 ### Q1
 
-[Insert answer here]
+
+
+Pull requests are an essential tool that is used when working remotely on a project within a team. A pull request (in particular, git pull origin “name_of_a_branch”) copies the files stored remotely in the GitHub repository. It is done to ensure that all changes applied earlier are copied and no conflicts occur during future merges. 
+
 
 ### Q2
 
-[Insert answer here]
+The number in green represents how many lines of code have been updated (added or fixed), and the number in red represents how many lines have been removed from the code. 
 
 ### Q3
 
 #### 3a
-
-[Insert answer here]
+When we perform a git merge test while on the develop branch, we merge the current state of the develop branch with changes that are made within the “test” branch. 
 
 #### 3b
 
-[Insert answer here]
+When we create a new branch, say “test”, which is based on the “master” branch, and afterwards apply changes in the master branch, when merging these two branches, this message occurs. This happens because the test branch consisted of information that was in the earliest version of the master branch, and since the master branch is different now, it causes conflict. 
 
 #### 3c
 
-[Insert answer here]
+Everything before the “==” line belongs to the develop branch (lines 2 and 3). Everything else belongs to the test branch.
