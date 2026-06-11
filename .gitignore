@@ -12,3 +12,8 @@
 **/.DS_Store
 */.DS_Store
 **/._.DS_Store
+
+# Coursework / private documents
+*.pdf
+Mini-project.md
+wireframe.md
