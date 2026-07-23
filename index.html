@@ -1,459 +1,290 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikolay Deinego Portfolio - Homepage</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            position: relative;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            background-color: #C7D3CA;
-            
-        }
-
-        .container{
-            width: 1440px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-
-        .white_frame{
-
-            position: absolute;
-            width: 1252px;
-            height: 1980px;
-            left: 94px;
-            top: 111px;
-
-            background: #F8F8F8;
-
-
-        }
-        #banner{
-            position: absolute;
-            width: 1252px;
-            height: 660px;
-            left: 94px;
-            top: 215px;
-        }
-
-
-        
-
-        #main_title{
-
-position: absolute;
-width: 730px;
-height: 208px;
-left: calc(50% - 730px/2);
-top: 70px;
-
-font-family: 'Ojuju';
-font-style: normal;
-font-weight: 600;
-font-size: 64px;
-line-height: 90px;
-text-align: center;
-
-color: #000000;
-        }
-
-        #who_am_i{
-
-position: absolute;
-width: 889px;
-height: 397px;
-left: calc(50% - 889px/2 + 2.5px);
-top: 883px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 500;
-font-size: 36px;
-line-height: 93px;
-text-align: center;
-
-color: #000000;
-
-
-        }
-
-        #combine{
-position: absolute;
-width: 889px;
-height: 397px;
-left: calc(50% - 889px/2 + 2.5px);
-top: 1100px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 400;
-font-size: 30px;
-line-height: 93px;
-text-align: center;
-
-color: #000000;
-        }
-
-        .line1{
-position: absolute;
-width: 36px;
-height: 0px;
-left: 271px;
-top: 1280px;
-
-border: 3px solid #000000;
-transform: rotate(90deg);
-
-        }
-        .line2{
-position: absolute;
-width: 867px;
-height: 0px;
-left: 289px;
-top: 1300px;
-
-border: 3px solid #000000;
-
-        }
-        .line3{
-position: absolute;
-width: 36px;
-height: 0px;
-left: 1140px;
-top: 1282px;
-
-border: 3px solid #000000;
-transform: rotate(90deg);
-
-        }
-        .line4{
-position: absolute;
-width: 185px;
-height: 0px;
-left: 720px;
-top: 1395px;
-
-border: 3px solid #000000;
-transform: rotate(90deg);
-
-        }
-        .line5{
-position: absolute;
-width: 747px;
-height: 0px;
-left: 331px;
-top: 1488px;
-
-border: 3px solid #000000;
-transform: rotate(0deg);
-
-        }
-        .line6{
-position: absolute;
-width: 92px;
-height: 0px;
-left: 280px;
-top: 1534px;
-
-border: 3px solid #000000;
-transform: rotate(90deg);
-
-        }
-        .line7{
-position: absolute;
-width: 92px;
-height: 0px;
-left: 670px;
-top: 1534px;
-
-border: 3px solid #000000;
-transform: rotate(90deg);
-
-        }
-        .line8{
-position: absolute;
-width: 92px;
-height: 0px;
-left: 1035px;
-top: 1534px;
-
-border: 3px solid #000000;
-transform: rotate(90deg);
-
-        }
-        #iconabout{
-position: absolute;
-width: 1032px;
-height: 34px;
-left: 275px;
-top: 1570px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 400;
-font-size: 28px;
-line-height: 72px;
-
-color: #000000;
-
-
-        }
-        #iconhobby{
-position: absolute;
-width: 1032px;
-height: 34px;
-left: 1035px;
-top: 1570px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 400;
-font-size: 28px;
-line-height: 72px;
-
-color: #000000;
-
-
-        }
-        #iconproject{
-            position: absolute;
-width: 1032px;
-height: 34px;
-left: 650px;
-top: 1570px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 400;
-font-size: 28px;
-line-height: 72px;
-
-color: #000000;
-
-        }
-        #photo_about{
-position: absolute;
-width: 225px;
-height: 225px;
-left: 212px;
-top: 1659px;
-
-background: #465A54;
-border-radius: 43px;
-
-        }
-        #photo_projects{
-position: absolute;
-width: 238px;
-height: 227px;
-left: 591px;
-top: 1659px;
-
-background: #465A54;
-border-radius: 43px;
-
-        }
-        #photo_hobby{
-position: absolute;
-width: 238px;
-height: 227px;
-left: 975px;
-top: 1659px;
-
-background: #465A54;
-border-radius: 43px;
-
-        }
-
-        .pink_frame{
-
-position: absolute;
-width: 1252px;
-height: 1300px;
-left: 94px;
-top: 2091px;
-
-background: #DCBFB7;
-
-        }
-
-        .brown_frame{
-position: absolute;
-width: 1682px;
-height: 517px;
-left: -122px;
-top: 3300px;
-
-background: #69635F;
-
-        }
-
-
-        #ABOUTME{
-position: absolute;
-width: 312px;
-height: 124px;
-left: calc(50% - 312px/2);
-top: 2100px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 124px;
-color: #000000;
-
-
-        }
-        #photo_portfolio{
-position: absolute;
-width: 567px;
-height: 794px;
-left: 155px;
-top: 2350px;
-
-background: url(photo_2025-06-09_12-00-45.jpg);
-
-        }
-        #content{
-position: absolute;
-width: 542px;
-height: 833px;
-left: 99px;
-top: 3350px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 62px;
-
-color: #FFFFFF;
-
-
-        }
-
-        #paragraph{
-position: absolute;
-width: 522px;
-height: 699px;
-left: 770px;
-top: 2287px;
-
-font-family: 'Inknut Antiqua';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 40px;
-
-color: #000000;
-
-
-        }
-        #backToTop {
-                position: fixed;
-                bottom: 40px;
-                right: 80px;
-                background-color: #465A54;
-                color: white;
-                border: none;
-                padding: 6px 10px;    
-                border-radius: 6px;    
-                cursor: pointer;
-                font-size: 16px;       
-                z-index: 1000;
-                }
-                #backToTop img {
-  width: 100px; 
-  height: auto;
-}
-
-#backToTop:hover {
-  background-color: #159E75;
-}
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikolay Deinego — Computer Science Student & Developer</title>
+<meta name="description" content="Nikolay Deinego — CS student at Simon Fraser University focused on systems engineering, network security, and full-stack development.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="white_frame">
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <span class="nav-logo">Nikolay Deinego</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="dot"></span><span class="toggle-label">Dark</span>
+    </button>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</div>
+
+<header class="hero container">
+  <div class="hero-top">
+    <div>
+      <p class="eyebrow">CS Student — Systems &amp; Full-Stack</p>
+      <h1>Nikolay<br>Deinego</h1>
     </div>
-    <div class="pink_frame">
+    <div class="hero-badges">
+      <span class="badge live"><span class="dot"></span>Available for internships</span>
+      <span class="badge">Vancouver, BC</span>
+      <span class="badge">SFU — BSc CS, Dec 2027</span>
     </div>
-    <div class="brown_frame"></div>
-    <h1 id="main_title">Nikolay Deinego</h1>
-    <img src="images/photo_collage_1.jpg" id="banner" alt="Collage - Nikolay Deinego (4 photos)">
-    <h2 id="who_am_i">“I'm a CS student learning web development
-         with the mindset of an artist.</h2>
-    <h3 id="combine"> I combine creativity with code and focus on how AI can make everyday life smarter and more human.”</h3>
+  </div>
+  <p class="hero-sub">Building at the intersection of network security and full-stack product engineering — from packet-level intrusion detection to production web applications.</p>
+</header>
 
-
-    <div class="ABOUT">
-        <a href="index.html">
-            <img src="images/photo_about.jpg" id="photo_about" alt="Person icon button">
-            <p id="iconabout">About</p>
-        </a>
+<section id="about">
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow" style="margin-bottom:18px;">About</p>
+      <p class="about-text">Computer Science student at <strong>Simon Fraser University</strong> (BSc, expected December 2027), with focus split between systems-level engineering, network protocols, and intrusion detection, and full-stack product development. Graduated high school in Kazakhstan with a red diploma, awarded for a cumulative GPA of 5.0/5.0 across the final two years of study. Also completed a separate diploma at a specialized music school, pursued alongside regular academic studies.</p>
+      <a class="resume-link" href="resume.pdf" target="_blank" rel="noopener">
+        View Resume
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
-
-    <div class="HOBBIES">
-        <a href="hobbies.html">
-            <img src="images/photo_hobby.jpg" id="photo_hobby" alt="Piano titles icon button" >
-            <p id="iconhobby">Hobbies</p>
-        </a>
+    <div class="about-meta">
+      <div class="about-meta-item">
+        <div class="label">Based in</div>
+        <div class="value">Vancouver, BC, Canada</div>
+      </div>
+      <div class="about-meta-item">
+        <div class="label">Studying</div>
+        <div class="value">BSc Computer Science, SFU — expected Dec 2027</div>
+      </div>
+      <div class="about-meta-item">
+        <div class="label">Focus</div>
+        <div class="value">Systems &amp; network security, full-stack development</div>
+      </div>
+      <div class="about-meta-item">
+        <div class="label">Contact</div>
+        <div class="value"><a href="mailto:nda76@sfu.ca">nda76@sfu.ca</a></div>
+      </div>
     </div>
-    <div class="PROJECTS">
-        <a href="myproject.html">
-            <img src="images/photo_projects.jpg" id="photo_projects" alt="Computer icon button">
-            <p id="iconproject">Projects</p>
-        </a>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <h2>Experience &amp;<br>Leadership</h2>
     </div>
+    <div class="exp-list">
 
-    <div class="line line1"></div>
-    <div class="line line2"></div>
-    <div class="line line3"></div>
-    <div class="line line4"></div>
-    <div class="line line5"></div>
-    <div class="line line6"></div>
-    <div class="line line7"></div>
-    <div class="line line8"></div>
+      <div class="exp-item">
+        <div class="exp-role">
+          <h3>LCE Living-Learning Community Advisor</h3>
+          <div class="org">SFU Residence &amp; Housing</div>
+        </div>
+        <p class="exp-desc">A part-time, live-in peer leadership role supporting residents' academic and social transition to university life — delivering co-curricular programming, serving as a first point of contact, mediating community conflict, and responding to incidents during rotating on-call shifts.</p>
+        <div class="exp-date">Aug 2026 – Apr 2027<br>Incoming</div>
+      </div>
 
+      <div class="exp-item">
+        <div class="exp-role">
+          <h3>Volunteer Artist</h3>
+          <div class="org">"Special Holidays" Public Fund — Astana, Kazakhstan</div>
+        </div>
+        <p class="exp-desc">Ongoing volunteer with a public fund focused on inclusion and support for children with special needs, contributing to four fund-organized initiatives — including the Presidential Christmas Tree event and a charity lunch for children with special needs.</p>
+        <div class="exp-date">Dec 2024 – Present</div>
+      </div>
 
-    <h2 id="ABOUTME">ABOUT ME</h2>
-    <img src="images/photo_portfolio.jpg" id="photo_portfolio" alt="Photo of Nikolay Deinego (portfolio)">
-    <p id="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My name is Nikolay Deinego — a Computer Science student at Simon Fraser University in Canada, an aspiring software developer, and AI researcher. <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With a deep passion for both code and communication, I combine technical precision with creative energy to design systems that not only function, but connect, teach, and inspire. I specialize in translating complex ideas into elegant solutions — whether through software, video, or spoken word. Beyond development, I thrive in roles that involve teaching, presenting, and leading;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I believe knowledge is most powerful when shared. Off-screen, you’ll find me at the piano or in front of a camera, crafting educational and thought-driven content. I'm fluent in two languages, currently studying Chinese, and deeply committed to personal growth, discipline, and creative expression. My path is defined by passion, clarity of vision, and an unwavering pursuit of excellence.</p>
-    <div id="content">
-            <h4>Email: <a href="mailto:nikolaydeinego@gmail.com">Email Me</a></h4>
-    <h4>
-        Facebook: <a href="https://www.facebook.com/nick.deinego" target="_blank">Visit my profile</a>
-    </h4>
-    <h4> GitHub: <a href="https://github.com/Deinick" target="_blank">My GitHub</a> </h4>
+      <div class="exp-item">
+        <div class="exp-role">
+          <h3>Note Taker</h3>
+          <div class="org">SFU Centre for Accessible Learning</div>
+        </div>
+        <p class="exp-desc">Provided lecture notes each semester for students unable to take their own due to disability, as part of SFU's formal accommodation program ensuring equal access to course material.</p>
+        <div class="exp-date">Spring 2025, Spring 2026<br>Paid</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">
+          <h3>Decor &amp; Space Design</h3>
+          <div class="org">B. Adele LLP — Astana, Kazakhstan</div>
+        </div>
+        <p class="exp-desc">Contracted decor and space designer for New Year holiday installations across Astana — preparing decorations, running quality control against safety standards, and coordinating daily with a team to keep delivery on a fixed schedule.</p>
+        <div class="exp-date">Dec 2024<br>Contract</div>
+      </div>
 
     </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <h2>Skills</h2>
     </div>
-      <button onclick="scrollToTop()" id="backToTop"><img src="images/arrow.png" alt="Back to top button"/> <br>BACK TO TOP</button>
+    <div class="skills-grid">
 
-  <script>
-    window.onscroll = function () {
-      const button = document.getElementById("backToTop");
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        button.style.display = "block";
-      } else {
-        button.style.display = "none";
-      }
-    };
+      <div class="skill-group">
+        <div class="label">Languages</div>
+        <div class="tag-row">
+          <span class="tag">C</span><span class="tag">C++</span><span class="tag">C#</span>
+          <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript / TypeScript</span>
+          <span class="tag">x86-64 Assembly</span><span class="tag">SQL</span>
+        </div>
+      </div>
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+      <div class="skill-group">
+        <div class="label">Frameworks</div>
+        <div class="tag-row">
+          <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">React Flow</span>
+          <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">FastAPI</span>
+          <span class="tag">Flask</span><span class="tag">ROS</span><span class="tag">PostgreSQL</span><span class="tag">SQLite</span>
+        </div>
+      </div>
 
+      <div class="skill-group">
+        <div class="label">Systems &amp; Security</div>
+        <div class="tag-row">
+          <span class="tag">Raw Socket Programming</span><span class="tag">TCP/IP Networking</span>
+          <span class="tag">Intrusion Detection</span><span class="tag">RBAC &amp; Authentication</span>
+          <span class="tag">OAuth 2.0</span><span class="tag">Multithreading &amp; Concurrency</span>
+          <span class="tag">Unix/Linux Systems Programming</span><span class="tag">Computer Architecture</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">AI &amp; Data</div>
+        <div class="tag-row">
+          <span class="tag">Graph Algorithms (BFS / Topological Sort)</span>
+          <span class="tag">Linear Regression &amp; Gradient Descent</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">Software Engineering</div>
+        <div class="tag-row">
+          <span class="tag">Object-Oriented Design &amp; UML</span><span class="tag">Agile/Scrum</span><span class="tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">Tools</div>
+        <div class="tag-row">
+          <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Docker</span>
+          <span class="tag">Wireshark / PCAP</span><span class="tag">pytest</span><span class="tag">JUnit</span><span class="tag">Figma</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <h2>Projects</h2>
+    </div>
+    <div class="project-list">
+
+      <a class="project-card" href="projects/maturin.html">
+        <div class="project-card-body">
+          <div class="project-num">01 · May 2026 – Present</div>
+          <h3>Maturin</h3>
+          <p class="hook">A paper habit-tracker rebuilt into a full project-management tool — diff-based change approval, 3-tier RBAC, dependency-graph phase locking, and live analytics computed on request.</p>
+          <div class="project-tags">
+            <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Express 5</span><span class="tag">PostgreSQL</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-visual v1"><span>Maturin — Project Preview</span></div>
+      </a>
+
+      <a class="project-card" href="projects/netguard.html">
+        <div class="project-card-body">
+          <div class="project-num">02 · Oct – Dec 2025</div>
+          <h3>NetGuard</h3>
+          <p class="hook">A real-time network intrusion detection system built on raw sockets — self-calibrating baselines, a hot-reloadable rules engine, and a live 5-panel terminal dashboard.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">Raw Sockets</span><span class="tag">Threading</span><span class="tag">Rich TUI</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-visual v2"><span>NetGuard — Project Preview</span></div>
+      </a>
+
+      <a class="project-card" href="projects/telusguardai.html">
+        <div class="project-card-body">
+          <div class="project-num">03 · Jan 2025 · 24h Hackathon</div>
+          <h3>TelusGuardAI</h3>
+          <p class="hook">Built in 24 hours: a plain-language query into TELUS network disruptions, answered by a multi-agent pipeline and visualized on a live interactive coverage map.</p>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Leaflet</span><span class="tag">Flask</span><span class="tag">Multi-Agent AI</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-visual v3"><span>TelusGuardAI — Project Preview</span></div>
+      </a>
+
+      <a class="project-card" href="projects/futurespend.html">
+        <div class="project-card-body">
+          <div class="project-num">04 · Mar 2026 · Mountain Madness Hackathon</div>
+          <h3>FutureSpend</h3>
+          <p class="hook">Connects a user's calendar to a spending forecast — predicting spend by category from upcoming events, with savings challenges and an AI coach.</p>
+          <div class="project-tags">
+            <span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Google Calendar API</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-visual v4"><span>FutureSpend — Project Preview</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="contact" id="contact">
+  <div class="container">
+    <p class="eyebrow">Get in touch</p>
+    <h2 class="contact-title">
+      <a href="mailto:nda76@sfu.ca">Say hi!
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </h2>
+    <div class="contact-meta">
+      <div class="addr">
+        nda76@sfu.ca<br>
+        Vancouver, BC, Canada
+      </div>
+      <div class="contact-socials">
+        <a href="mailto:nda76@sfu.ca">Email</a>
+        <a href="https://linkedin.com/in/nikolay-deinego" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Deinick" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Nikolay Deinego — Computer Science Student, Simon Fraser University</div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>
