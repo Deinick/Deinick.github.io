@@ -7,10 +7,19 @@
 <meta name="description" content="NetGuard: a real-time network intrusion detection system built on raw sockets, with a self-calibrating baseline and a live terminal dashboard.">
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
+<script>(function(){if(sessionStorage.getItem('nd_pt_active')==='1'){document.documentElement.classList.add('pt-incoming');}}());</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -26,15 +35,21 @@
   <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
 </div>
 
+<div class="page-transition" id="pageTransition" data-glb="../assets/katana.glb" aria-hidden="true">
+  <div class="pt-panel" id="ptPanel"></div>
+  <canvas class="pt-canvas" id="ptCanvas"></canvas>
+  <div class="pt-sparkles" id="ptSparkles"></div>
+</div>
+
 <div class="nav-wrap">
   <nav class="nav">
-    <a class="nav-logo" href="../index.html">Nikolay Deinego</a>
+    <a class="nav-logo" data-transition="katana" href="../index.html">Nikolay Deinego</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#experience">Experience</a></li>
-      <li><a href="../index.html#skills">Skills</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a data-transition="katana" href="../index.html#about">About</a></li>
+      <li><a data-transition="katana" href="../index.html#experience">Experience</a></li>
+      <li><a data-transition="katana" href="../index.html#skills">Skills</a></li>
+      <li><a data-transition="katana" href="../index.html#projects">Projects</a></li>
+      <li><a data-transition="katana" href="../index.html#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
       <span class="dot"></span><span class="toggle-label">Dark</span>
@@ -46,7 +61,7 @@
 </div>
 
 <header class="proj-hero container">
-  <a class="proj-back" href="../index.html#projects">
+  <a class="proj-back" data-transition="katana" href="../index.html#projects">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17H15M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Back to projects
   </a>
@@ -78,8 +93,8 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Story</span></div>
     <div class="prose">
-      <p class="reveal-up">Network and device security is an area of sustained personal interest — a large share of real-world security incidents originate at the point of network connection, not from files already resting on disk. NetGuard was built to observe traffic at exactly that layer: what a device sends and receives the moment it connects, rather than scanning what's already stored.</p>
-      <p class="reveal-up">Validation was the hardest part of the build: proving that packet parsing and detection logic held up against real, messy traffic rather than a handful of clean test cases. The project grew from a terminal-based analysis script into a full application: a live 5-panel dashboard, an IP reputation system with automatic threat-scoring, and a custom rules engine that lets a user reload new detection logic at runtime without restarting capture.</p>
+      <p class="reveal-left">Network and device security is an area of sustained personal interest — a large share of real-world security incidents originate at the point of network connection, not from files already resting on disk. NetGuard was built to observe traffic at exactly that layer: what a device sends and receives the moment it connects, rather than scanning what's already stored.</p>
+      <p class="reveal-right">Validation was the hardest part of the build: proving that packet parsing and detection logic held up against real, messy traffic rather than a handful of clean test cases. The project grew from a terminal-based analysis script into a full application: a live 5-panel dashboard, an IP reputation system with automatic threat-scoring, and a custom rules engine that lets a user reload new detection logic at runtime without restarting capture.</p>
       <p class="reveal-up">Planned extensions include reimplementing core components in C/C++ for lower-level performance, and expanding automated classification of known-malicious network behavior.</p>
     </div>
   </div>
@@ -89,12 +104,12 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Technical Highlights</span></div>
     <ul class="highlights">
-      <li class="reveal-up"><span class="n">01</span><span><strong>Raw-socket packet engine.</strong> Engineered a real-time network intrusion detection system (~2,900 LOC, 13 modules) that captures and parses raw traffic from Ethernet through HTTP via AF_PACKET raw sockets, manually decoding headers with <code>struct</code> — no packet-parsing libraries used.</span></li>
-      <li class="reveal-up"><span class="n">02</span><span><strong>Port-scan &amp; flood detection.</strong> Implemented 4 port-scan detection algorithms (SYN, FIN, XMAS, TCP Connect) and a rate-based SYN-flood detector using sliding time windows and TCP handshake state tracking, with alert hysteresis to prevent duplicate-alert flooding.</span></li>
-      <li class="reveal-up"><span class="n">03</span><span><strong>Self-calibrating baseline.</strong> Replaced fixed alert thresholds with a baseline that learns each network's normal behavior over a 5-minute window, scaling alert severity by standard deviation rather than a hardcoded cutoff.</span></li>
-      <li class="reveal-up"><span class="n">04</span><span><strong>IP reputation system.</strong> Built blacklist/whitelist support and suspicion scoring that automatically promotes repeat offenders to "malicious," persisted as JSON state across runs.</span></li>
-      <li class="reveal-up"><span class="n">05</span><span><strong>Hot-reloadable rules engine.</strong> Designed a custom YAML rules engine supporting compound conditions and windowed thresholds, reloadable at runtime without restarting capture.</span></li>
-      <li class="reveal-up"><span class="n">06</span><span><strong>Multi-threaded live dashboard.</strong> Built a real-time terminal dashboard (5 live panels: stats, alerts, connections, top talkers, packet feed) with concurrent capture/render threads coordinated via thread-safe queues, plus a hand-written PCAP exporter for offline analysis in Wireshark.</span></li>
+      <li class="reveal-left"><span class="n">01</span><span><strong>Raw-socket packet engine.</strong> Engineered a real-time network intrusion detection system (~2,900 LOC, 13 modules) that captures and parses raw traffic from Ethernet through HTTP via AF_PACKET raw sockets, manually decoding headers with <code>struct</code> — no packet-parsing libraries used.</span></li>
+      <li class="reveal-right"><span class="n">02</span><span><strong>Port-scan &amp; flood detection.</strong> Implemented 4 port-scan detection algorithms (SYN, FIN, XMAS, TCP Connect) and a rate-based SYN-flood detector using sliding time windows and TCP handshake state tracking, with alert hysteresis to prevent duplicate-alert flooding.</span></li>
+      <li class="reveal-left"><span class="n">03</span><span><strong>Self-calibrating baseline.</strong> Replaced fixed alert thresholds with a baseline that learns each network's normal behavior over a 5-minute window, scaling alert severity by standard deviation rather than a hardcoded cutoff.</span></li>
+      <li class="reveal-right"><span class="n">04</span><span><strong>IP reputation system.</strong> Built blacklist/whitelist support and suspicion scoring that automatically promotes repeat offenders to "malicious," persisted as JSON state across runs.</span></li>
+      <li class="reveal-left"><span class="n">05</span><span><strong>Hot-reloadable rules engine.</strong> Designed a custom YAML rules engine supporting compound conditions and windowed thresholds, reloadable at runtime without restarting capture.</span></li>
+      <li class="reveal-right"><span class="n">06</span><span><strong>Multi-threaded live dashboard.</strong> Built a real-time terminal dashboard (5 live panels: stats, alerts, connections, top talkers, packet feed) with concurrent capture/render threads coordinated via thread-safe queues, plus a hand-written PCAP exporter for offline analysis in Wireshark.</span></li>
     </ul>
   </div>
 </section>
@@ -104,12 +119,12 @@
     <div class="rail"><span class="rail-label">Screenshots</span></div>
     <div>
       <div class="shot-grid">
-        <div class="placeholder-shot reveal-up">
+        <div class="placeholder-shot reveal-diag-l">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Terminal dashboard — stats &amp; alerts</span>
           <span class="sub">Screenshot to be added</span>
         </div>
-        <div class="placeholder-shot reveal-up">
+        <div class="placeholder-shot reveal-diag-r">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Top talkers &amp; packet feed</span>
           <span class="sub">Screenshot to be added</span>
@@ -123,7 +138,7 @@
 </section>
 
 <div class="container proj-nextlink">
-  <a class="proj-next-card reveal-up" href="telusguardai.html">
+  <a class="proj-next-card reveal-right" data-transition="katana" href="telusguardai.html">
     <div>
       <div class="label">Next project</div>
       <h4>TelusGuardAI →</h4>
@@ -140,5 +155,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/transition.js"></script>
 </body>
 </html>

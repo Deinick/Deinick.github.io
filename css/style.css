@@ -1,22 +1,25 @@
 /* ---------------------------------------------------------
    Nikolay Deinego — Portfolio
-   Design system: cream/near-black light mode, dark inverse.
+   Design system: Red Dead Redemption palette —
+   dark oxblood/black by default, aged-parchment daylight mode.
 --------------------------------------------------------- */
 
 :root {
-  --bg: #ede9e0;
-  --bg-alt: #e4e0d5;
-  --surface: #f6f4ee;
-  --surface-border: rgba(20, 19, 15, 0.12);
-  --text: #171614;
-  --text-muted: #6b6a62;
-  --text-faint: #97958a;
-  --accent: #d9531f;
-  --accent-text: #f6f4ee;
+  /* Light = sun-bleached parchment / wanted-poster paper */
+  --bg: #e9dcc3;
+  --bg-alt: #dfd0b1;
+  --surface: #f2e8d3;
+  --surface-border: rgba(43, 18, 15, 0.16);
+  --text: #2b1210;
+  --text-muted: #6b4a3a;
+  --text-faint: #9c8064;
+  --accent: #8c1c1c;
+  --accent2: #c08a3e;
+  --accent-text: #f2e8d3;
   --tag-bg: transparent;
-  --tag-border: rgba(20, 19, 15, 0.22);
-  --pill-bg: rgba(246, 244, 238, 0.7);
-  --shadow: 0 1px 2px rgba(20, 19, 15, 0.04);
+  --tag-border: rgba(43, 18, 15, 0.26);
+  --pill-bg: rgba(242, 232, 211, 0.78);
+  --shadow: 0 1px 2px rgba(43, 18, 15, 0.1);
   --radius-lg: 28px;
   --radius-md: 18px;
   --radius-sm: 10px;
@@ -27,36 +30,57 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #14130f;
-  --bg-alt: #1a1913;
-  --surface: #1c1b16;
-  --surface-border: rgba(237, 233, 224, 0.1);
-  --text: #ede9e0;
-  --text-muted: #a5a294;
-  --text-faint: #706e63;
-  --accent: #ff7a3d;
-  --accent-text: #14130f;
-  --tag-border: rgba(237, 233, 224, 0.22);
-  --pill-bg: rgba(28, 27, 22, 0.7);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  /* Dark = oxblood + black, brass-gold accents, menu-screen mood */
+  --bg: #14090a;
+  --bg-alt: #1c0d0d;
+  --surface: #24100f;
+  --surface-border: rgba(232, 214, 181, 0.1);
+  --text: #e8d9c0;
+  --text-muted: #b3987a;
+  --text-faint: #7a6752;
+  --accent: #c9432f;
+  --accent2: #c08a3e;
+  --accent-text: #180a09;
+  --tag-border: rgba(232, 214, 181, 0.2);
+  --pill-bg: rgba(36, 16, 15, 0.78);
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14130f;
-    --bg-alt: #1a1913;
-    --surface: #1c1b16;
-    --surface-border: rgba(237, 233, 224, 0.1);
-    --text: #ede9e0;
-    --text-muted: #a5a294;
-    --text-faint: #706e63;
-    --accent: #ff7a3d;
-    --accent-text: #14130f;
-    --tag-border: rgba(237, 233, 224, 0.22);
-    --pill-bg: rgba(28, 27, 22, 0.7);
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --bg: #14090a;
+    --bg-alt: #1c0d0d;
+    --surface: #24100f;
+    --surface-border: rgba(232, 214, 181, 0.1);
+    --text: #e8d9c0;
+    --text-muted: #b3987a;
+    --text-faint: #7a6752;
+    --accent: #c9432f;
+    --accent2: #c08a3e;
+    --accent-text: #180a09;
+    --tag-border: rgba(232, 214, 181, 0.2);
+    --pill-bg: rgba(36, 16, 15, 0.78);
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
     color-scheme: dark;
+  }
+}
+
+/* Dark-mode vignette — subtle radial burn toward the edges, RDR2 menu mood */
+body::before {
+  content: none;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9996;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.45) 100%);
+}
+:root[data-theme="dark"] body::before {
+  content: "";
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body::before {
+    content: "";
   }
 }
 
@@ -291,7 +315,7 @@ p {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #5ea86b;
+  background: #8fae5c;
   animation: blink 2.2s ease infinite;
 }
 
@@ -591,10 +615,10 @@ section {
   opacity: 0.85;
 }
 
-.project-visual.v1 { background: linear-gradient(140deg, #3f5c4c, #24352c); }
-.project-visual.v2 { background: linear-gradient(140deg, #4a4038, #241f1a); }
-.project-visual.v3 { background: linear-gradient(140deg, #35424f, #1a2129); }
-.project-visual.v4 { background: linear-gradient(140deg, #6b4a2e, #2c1e13); }
+.project-visual.v1 { background: linear-gradient(140deg, #7a2420, #1c0d0d); }
+.project-visual.v2 { background: linear-gradient(140deg, #5c4522, #1c0d0d); }
+.project-visual.v3 { background: linear-gradient(140deg, #8c1c1c, #24100f); }
+.project-visual.v4 { background: linear-gradient(140deg, #c08a3e, #4a1a16); }
 
 @media (max-width: 860px) {
   .project-card { grid-template-columns: 1fr; }
@@ -1087,16 +1111,116 @@ body.is-hovering .cursor-label-dot {
   transform: translateY(110%);
 }
 
-/* ---------------- Scroll reveal (fade + rise) ---------------- */
+/* ---------------- Scroll reveal (multi-direction, bidirectional) ---------------- */
+/* Each .reveal-* sets its own resting (hidden) transform; GSAP tweens it back
+   to identity on the way in, and reverses it on the way out (scrolling back
+   past the trigger either direction) — see initScroll() in main.js. */
 
-.reveal-up {
+.reveal-up,
+.reveal-down,
+.reveal-left,
+.reveal-right,
+.reveal-diag-l,
+.reveal-diag-r {
   opacity: 0;
-  transform: translateY(28px);
+  will-change: transform, opacity;
 }
+
+.reveal-up   { transform: translateY(34px); }
+.reveal-down { transform: translateY(-34px); }
+.reveal-left  { transform: translate(-56px, 10px) rotate(-2.5deg); }
+.reveal-right { transform: translate(56px, 10px) rotate(2.5deg); }
+.reveal-diag-l { transform: translate(-48px, 46px) rotate(-3.5deg); }
+.reveal-diag-r { transform: translate(48px, 46px) rotate(3.5deg); }
 
 @media (prefers-reduced-motion: reduce) {
   .tl span { transform: none !important; }
-  .reveal-up { opacity: 1 !important; transform: none !important; }
+  .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-diag-l, .reveal-diag-r {
+    opacity: 1 !important; transform: none !important;
+  }
   #preloader { display: none !important; }
   html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   PAGE TRANSITION — katana wipe (nav between home <-> projects)
+   Straight left-to-right wipe: .pt-panel is a full-viewport rectangle
+   that slides on from the left (covering), holds, then continues off
+   to the right (revealing). Spark particles trail the leading edge.
+   The 3D katana render is a bonus layer only used when already loaded
+   by click time — it never changes the timing below.
+============================================================ */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.page-transition.active {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.pt-panel {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  transform: translateX(-100%);
+  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+.pt-panel.cover {
+  transform: translateX(0%);
+}
+
+.pt-panel.off-exit {
+  transform: translateX(100%);
+}
+
+.pt-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+}
+
+.pt-sparkles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pt-spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, var(--accent2) 55%, transparent 75%);
+  box-shadow: 0 0 10px 2px var(--accent2);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Incoming page: covered instantly (set via inline head script, before paint) */
+html.pt-incoming .page-transition {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+html.pt-incoming .pt-panel {
+  transform: translateX(0%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition, .pt-panel, .pt-canvas, .pt-spark { transition: none !important; }
 }
