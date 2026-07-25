@@ -6,12 +6,25 @@
 <title>NetGuard — Nikolay Deinego</title>
 <meta name="description" content="NetGuard: a real-time network intrusion detection system built on raw sockets, with a self-calibrating baseline and a live terminal dashboard.">
 <link rel="icon" type="image/png" href="../images/favicon.png">
+<script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<div id="preloader">
+  <div class="pl-name"><span>Nikolay Deinego</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+</div>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-arrow">
+    <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M2 2L2 19L6.5 14.5L9.5 21L12.5 19.5L9.5 13H17L2 2Z" fill="currentColor"/></svg>
+  </div>
+  <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
+</div>
 
 <div class="nav-wrap">
   <nav class="nav">
@@ -38,7 +51,7 @@
     Back to projects
   </a>
   <p class="eyebrow">Personal Project — MIT Licensed — October – December 2025</p>
-  <h1>NetGuard</h1>
+  <h1><span class="tl"><span>NetGuard</span></span></h1>
   <p class="proj-hook">Packet Analyser &amp; Intrusion Detection System — observing traffic at the exact layer where a large share of real-world security incidents originate: the point of network connection, not files already resting on disk.</p>
 
   <div class="proj-meta-row">
@@ -65,9 +78,9 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Story</span></div>
     <div class="prose">
-      <p>Network and device security is an area of sustained personal interest — a large share of real-world security incidents originate at the point of network connection, not from files already resting on disk. NetGuard was built to observe traffic at exactly that layer: what a device sends and receives the moment it connects, rather than scanning what's already stored.</p>
-      <p>Validation was the hardest part of the build: proving that packet parsing and detection logic held up against real, messy traffic rather than a handful of clean test cases. The project grew from a terminal-based analysis script into a full application: a live 5-panel dashboard, an IP reputation system with automatic threat-scoring, and a custom rules engine that lets a user reload new detection logic at runtime without restarting capture.</p>
-      <p>Planned extensions include reimplementing core components in C/C++ for lower-level performance, and expanding automated classification of known-malicious network behavior.</p>
+      <p class="reveal-up">Network and device security is an area of sustained personal interest — a large share of real-world security incidents originate at the point of network connection, not from files already resting on disk. NetGuard was built to observe traffic at exactly that layer: what a device sends and receives the moment it connects, rather than scanning what's already stored.</p>
+      <p class="reveal-up">Validation was the hardest part of the build: proving that packet parsing and detection logic held up against real, messy traffic rather than a handful of clean test cases. The project grew from a terminal-based analysis script into a full application: a live 5-panel dashboard, an IP reputation system with automatic threat-scoring, and a custom rules engine that lets a user reload new detection logic at runtime without restarting capture.</p>
+      <p class="reveal-up">Planned extensions include reimplementing core components in C/C++ for lower-level performance, and expanding automated classification of known-malicious network behavior.</p>
     </div>
   </div>
 </section>
@@ -76,12 +89,12 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Technical Highlights</span></div>
     <ul class="highlights">
-      <li><span class="n">01</span><span><strong>Raw-socket packet engine.</strong> Engineered a real-time network intrusion detection system (~2,900 LOC, 13 modules) that captures and parses raw traffic from Ethernet through HTTP via AF_PACKET raw sockets, manually decoding headers with <code>struct</code> — no packet-parsing libraries used.</span></li>
-      <li><span class="n">02</span><span><strong>Port-scan &amp; flood detection.</strong> Implemented 4 port-scan detection algorithms (SYN, FIN, XMAS, TCP Connect) and a rate-based SYN-flood detector using sliding time windows and TCP handshake state tracking, with alert hysteresis to prevent duplicate-alert flooding.</span></li>
-      <li><span class="n">03</span><span><strong>Self-calibrating baseline.</strong> Replaced fixed alert thresholds with a baseline that learns each network's normal behavior over a 5-minute window, scaling alert severity by standard deviation rather than a hardcoded cutoff.</span></li>
-      <li><span class="n">04</span><span><strong>IP reputation system.</strong> Built blacklist/whitelist support and suspicion scoring that automatically promotes repeat offenders to "malicious," persisted as JSON state across runs.</span></li>
-      <li><span class="n">05</span><span><strong>Hot-reloadable rules engine.</strong> Designed a custom YAML rules engine supporting compound conditions and windowed thresholds, reloadable at runtime without restarting capture.</span></li>
-      <li><span class="n">06</span><span><strong>Multi-threaded live dashboard.</strong> Built a real-time terminal dashboard (5 live panels: stats, alerts, connections, top talkers, packet feed) with concurrent capture/render threads coordinated via thread-safe queues, plus a hand-written PCAP exporter for offline analysis in Wireshark.</span></li>
+      <li class="reveal-up"><span class="n">01</span><span><strong>Raw-socket packet engine.</strong> Engineered a real-time network intrusion detection system (~2,900 LOC, 13 modules) that captures and parses raw traffic from Ethernet through HTTP via AF_PACKET raw sockets, manually decoding headers with <code>struct</code> — no packet-parsing libraries used.</span></li>
+      <li class="reveal-up"><span class="n">02</span><span><strong>Port-scan &amp; flood detection.</strong> Implemented 4 port-scan detection algorithms (SYN, FIN, XMAS, TCP Connect) and a rate-based SYN-flood detector using sliding time windows and TCP handshake state tracking, with alert hysteresis to prevent duplicate-alert flooding.</span></li>
+      <li class="reveal-up"><span class="n">03</span><span><strong>Self-calibrating baseline.</strong> Replaced fixed alert thresholds with a baseline that learns each network's normal behavior over a 5-minute window, scaling alert severity by standard deviation rather than a hardcoded cutoff.</span></li>
+      <li class="reveal-up"><span class="n">04</span><span><strong>IP reputation system.</strong> Built blacklist/whitelist support and suspicion scoring that automatically promotes repeat offenders to "malicious," persisted as JSON state across runs.</span></li>
+      <li class="reveal-up"><span class="n">05</span><span><strong>Hot-reloadable rules engine.</strong> Designed a custom YAML rules engine supporting compound conditions and windowed thresholds, reloadable at runtime without restarting capture.</span></li>
+      <li class="reveal-up"><span class="n">06</span><span><strong>Multi-threaded live dashboard.</strong> Built a real-time terminal dashboard (5 live panels: stats, alerts, connections, top talkers, packet feed) with concurrent capture/render threads coordinated via thread-safe queues, plus a hand-written PCAP exporter for offline analysis in Wireshark.</span></li>
     </ul>
   </div>
 </section>
@@ -91,18 +104,18 @@
     <div class="rail"><span class="rail-label">Screenshots</span></div>
     <div>
       <div class="shot-grid">
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Terminal dashboard — stats &amp; alerts</span>
           <span class="sub">Screenshot to be added</span>
         </div>
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Top talkers &amp; packet feed</span>
           <span class="sub">Screenshot to be added</span>
         </div>
       </div>
-      <div class="note-box" style="margin-top:28px;">
+      <div class="note-box reveal-up" style="margin-top:28px;">
         <strong>Note:</strong> this project requires raw-socket access on Linux (AF_PACKET) and root privileges to run, so it cannot be hosted as a public live demo — a screen recording is the right substitute here.
       </div>
     </div>
@@ -110,7 +123,7 @@
 </section>
 
 <div class="container proj-nextlink">
-  <a class="proj-next-card" href="telusguardai.html">
+  <a class="proj-next-card reveal-up" href="telusguardai.html">
     <div>
       <div class="label">Next project</div>
       <h4>TelusGuardAI →</h4>
@@ -124,6 +137,8 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

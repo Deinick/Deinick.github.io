@@ -6,12 +6,25 @@
 <title>TelusGuardAI — Nikolay Deinego</title>
 <meta name="description" content="TelusGuardAI: a 24-hour hackathon build analyzing TELUS network disruptions with a multi-agent pipeline and live coverage map.">
 <link rel="icon" type="image/png" href="../images/favicon.png">
+<script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<div id="preloader">
+  <div class="pl-name"><span>Nikolay Deinego</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+</div>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-arrow">
+    <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M2 2L2 19L6.5 14.5L9.5 21L12.5 19.5L9.5 13H17L2 2Z" fill="currentColor"/></svg>
+  </div>
+  <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
+</div>
 
 <div class="nav-wrap">
   <nav class="nav">
@@ -38,7 +51,7 @@
     Back to projects
   </a>
   <p class="eyebrow">Hackathon — 24 Hours — January 2025</p>
-  <h1>TelusGuardAI</h1>
+  <h1><span class="tl"><span>TelusGuardAI</span></span></h1>
   <p class="proj-hook">Network Disruption Impact Analyser — a plain-language question about a TELUS network disruption, answered by a multi-agent backend pipeline and visualized as affected areas, severity, and confidence on an interactive coverage map.</p>
 
   <div class="proj-meta-row">
@@ -65,9 +78,9 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Story</span></div>
     <div class="prose">
-      <p>TelusGuardAI was built in 24 hours at a hackathon — the first hackathon, and one of the first substantial team projects, undertaken. The system analyzes TELUS network disruptions during events like storms or outages: a user asks a plain-language question, and a multi-agent backend pipeline gathers web and weather intelligence to return affected areas, severity, and confidence, visualized on an interactive coverage map. The central challenge on the front end wasn't technical execution so much as translation: turning an open-ended problem statement into a specific, buildable idea.</p>
-      <p>Of two front-end team members, UI design and development was owned in full, from initial concept through several iterations to a final enterprise-style dark interface; a teammate independently built the mapping component and the multi-agent backend. The most demanding technical work was integration: bringing two independently developed front-end pieces together with the backend into one coherent system.</p>
-      <p>Given more time, the map would be developed into a fuller application in its own right, rather than remaining the project's single centerpiece.</p>
+      <p class="reveal-up">TelusGuardAI was built in 24 hours at a hackathon — the first hackathon, and one of the first substantial team projects, undertaken. The system analyzes TELUS network disruptions during events like storms or outages: a user asks a plain-language question, and a multi-agent backend pipeline gathers web and weather intelligence to return affected areas, severity, and confidence, visualized on an interactive coverage map. The central challenge on the front end wasn't technical execution so much as translation: turning an open-ended problem statement into a specific, buildable idea.</p>
+      <p class="reveal-up">Of two front-end team members, UI design and development was owned in full, from initial concept through several iterations to a final enterprise-style dark interface; a teammate independently built the mapping component and the multi-agent backend. The most demanding technical work was integration: bringing two independently developed front-end pieces together with the backend into one coherent system.</p>
+      <p class="reveal-up">Given more time, the map would be developed into a fuller application in its own right, rather than remaining the project's single centerpiece.</p>
     </div>
   </div>
 </section>
@@ -76,9 +89,9 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Technical Highlights</span></div>
     <ul class="highlights">
-      <li><span class="n">01</span><span><strong>End-to-end UI layer.</strong> Built the dashboard's UI layer end to end: the tower Details Panel, a Safety Panel, an Event and Action Log, and a full dark-theme pass across the application.</span></li>
-      <li><span class="n">02</span><span><strong>Live AI integration.</strong> Wired live AI-driven impact classification output, produced by a teammate's multi-agent backend, into the map, KPI tiles, and action log in real time.</span></li>
-      <li><span class="n">03</span><span><strong>Dashboard architecture.</strong> Designed and implemented the core dashboard layout and component structure, from an initial concept through several iterations to a final enterprise-style dark UI.</span></li>
+      <li class="reveal-up"><span class="n">01</span><span><strong>End-to-end UI layer.</strong> Built the dashboard's UI layer end to end: the tower Details Panel, a Safety Panel, an Event and Action Log, and a full dark-theme pass across the application.</span></li>
+      <li class="reveal-up"><span class="n">02</span><span><strong>Live AI integration.</strong> Wired live AI-driven impact classification output, produced by a teammate's multi-agent backend, into the map, KPI tiles, and action log in real time.</span></li>
+      <li class="reveal-up"><span class="n">03</span><span><strong>Dashboard architecture.</strong> Designed and implemented the core dashboard layout and component structure, from an initial concept through several iterations to a final enterprise-style dark UI.</span></li>
     </ul>
   </div>
 </section>
@@ -88,18 +101,18 @@
     <div class="rail"><span class="rail-label">Screenshots</span></div>
     <div>
       <div class="shot-grid">
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Tower details panel</span>
           <span class="sub">Screenshot to be added</span>
         </div>
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Event &amp; action log</span>
           <span class="sub">Screenshot to be added</span>
         </div>
       </div>
-      <div class="note-box" style="margin-top:28px;">
+      <div class="note-box reveal-up" style="margin-top:28px;">
         <strong>Note:</strong> this project was built for local development only and was never deployed publicly, so there is no live demo link — screenshots and a narrated recording are the right substitute.
       </div>
     </div>
@@ -107,7 +120,7 @@
 </section>
 
 <div class="container proj-nextlink">
-  <a class="proj-next-card" href="futurespend.html">
+  <a class="proj-next-card reveal-up" href="futurespend.html">
     <div>
       <div class="label">Next project</div>
       <h4>FutureSpend →</h4>
@@ -121,6 +134,8 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

@@ -6,12 +6,25 @@
 <title>Maturin — Nikolay Deinego</title>
 <meta name="description" content="Maturin: a full-stack productivity planner with diff-based approval workflows, RBAC, dependency graphs, and live analytics.">
 <link rel="icon" type="image/png" href="../images/favicon.png">
+<script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<div id="preloader">
+  <div class="pl-name"><span>Nikolay Deinego</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+</div>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-arrow">
+    <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M2 2L2 19L6.5 14.5L9.5 21L12.5 19.5L9.5 13H17L2 2Z" fill="currentColor"/></svg>
+  </div>
+  <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
+</div>
 
 <div class="nav-wrap">
   <nav class="nav">
@@ -38,7 +51,7 @@
     Back to projects
   </a>
   <p class="eyebrow">Personal Project — Active Development — May 2026 – Present</p>
-  <h1>Maturin</h1>
+  <h1><span class="tl"><span>Maturin</span></span></h1>
   <p class="proj-hook">A full-stack productivity planner rebuilding a paper habit-tracker into a real project-management tool — daily tasks and habits alongside multi-person projects with genuine governance: who's allowed to change what, what happens when they disagree, and what the trend line actually looks like once it's measured rather than guessed.</p>
 
   <div class="proj-meta-row">
@@ -69,9 +82,9 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Story</span></div>
     <div class="prose">
-      <p>Maturin began as a paper habit-tracker: a single sheet split between a daily habit checklist and a sleep log. The system worked, but the format didn't — filling it out each morning took just enough time, at just the wrong moment, that it was reliably skipped.</p>
-      <p>Maturin rebuilds that system digitally, extended into a full project-management tool: daily tasks and habits alongside multi-person projects with real governance, reasoned about the way an actual team would — who's allowed to change what, what happens when they disagree, and what the real trend line looks like once it's measured rather than guessed. The hardest part of development wasn't the interface — it was preserving genuine day-to-day usability through the transition to digital while treating account security as non-negotiable: fully isolated per-user data, and deliberate handling of edge cases around account creation to prevent any leakage between users.</p>
-      <p>This is an active solo project, not a finished product. Automated test coverage is the one piece known to still be missing, and is the current focus.</p>
+      <p class="reveal-up">Maturin began as a paper habit-tracker: a single sheet split between a daily habit checklist and a sleep log. The system worked, but the format didn't — filling it out each morning took just enough time, at just the wrong moment, that it was reliably skipped.</p>
+      <p class="reveal-up">Maturin rebuilds that system digitally, extended into a full project-management tool: daily tasks and habits alongside multi-person projects with real governance, reasoned about the way an actual team would — who's allowed to change what, what happens when they disagree, and what the real trend line looks like once it's measured rather than guessed. The hardest part of development wasn't the interface — it was preserving genuine day-to-day usability through the transition to digital while treating account security as non-negotiable: fully isolated per-user data, and deliberate handling of edge cases around account creation to prevent any leakage between users.</p>
+      <p class="reveal-up">This is an active solo project, not a finished product. Automated test coverage is the one piece known to still be missing, and is the current focus.</p>
     </div>
   </div>
 </section>
@@ -80,12 +93,12 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Technical Highlights</span></div>
     <ul class="highlights">
-      <li><span class="n">01</span><span><strong>Diff-based change approval.</strong> Designed a field-level, diff-based change-approval workflow: edits from contributors without sign-off rights are diffed field-by-field and routed as a pending change to someone with approval authority — the same pattern behind PR review or Google Docs suggestions, built from scratch for this domain.</span></li>
-      <li><span class="n">02</span><span><strong>3-tier RBAC.</strong> Gated all workflow actions behind a viewer/contributor/owner permission system, so only authorized reviewers can approve in-flight changes.</span></li>
-      <li><span class="n">03</span><span><strong>Dependency-graph engine.</strong> Built cycle-aware phase locking using BFS traversal and topological ordering, preventing circular prerequisites from silently corrupting a project's timeline — rendered live via React Flow.</span></li>
-      <li><span class="n">04</span><span><strong>Request-time derived analytics.</strong> Implemented a weighted project-health score and a velocity-based completion forecast, computed live rather than cached, plus a suggestion engine that flags stalled tasks, abandoned habits, and slipping milestones.</span></li>
-      <li><span class="n">05</span><span><strong>Token-based auth.</strong> Built with bcrypt(12) hashing and 256-bit crypto-random single-use tokens, with an enumeration-safe reset endpoint that prevents account existence from leaking through timing or error messages.</span></li>
-      <li><span class="n">06</span><span><strong>Single-service authorization layer.</strong> Architected the backend so permission and approval logic lives entirely in one service layer, not scattered across routes or the frontend — 51 endpoints across 9 resource domains, all deciding "who's allowed to do what" in exactly one place.</span></li>
+      <li class="reveal-up"><span class="n">01</span><span><strong>Diff-based change approval.</strong> Designed a field-level, diff-based change-approval workflow: edits from contributors without sign-off rights are diffed field-by-field and routed as a pending change to someone with approval authority — the same pattern behind PR review or Google Docs suggestions, built from scratch for this domain.</span></li>
+      <li class="reveal-up"><span class="n">02</span><span><strong>3-tier RBAC.</strong> Gated all workflow actions behind a viewer/contributor/owner permission system, so only authorized reviewers can approve in-flight changes.</span></li>
+      <li class="reveal-up"><span class="n">03</span><span><strong>Dependency-graph engine.</strong> Built cycle-aware phase locking using BFS traversal and topological ordering, preventing circular prerequisites from silently corrupting a project's timeline — rendered live via React Flow.</span></li>
+      <li class="reveal-up"><span class="n">04</span><span><strong>Request-time derived analytics.</strong> Implemented a weighted project-health score and a velocity-based completion forecast, computed live rather than cached, plus a suggestion engine that flags stalled tasks, abandoned habits, and slipping milestones.</span></li>
+      <li class="reveal-up"><span class="n">05</span><span><strong>Token-based auth.</strong> Built with bcrypt(12) hashing and 256-bit crypto-random single-use tokens, with an enumeration-safe reset endpoint that prevents account existence from leaking through timing or error messages.</span></li>
+      <li class="reveal-up"><span class="n">06</span><span><strong>Single-service authorization layer.</strong> Architected the backend so permission and approval logic lives entirely in one service layer, not scattered across routes or the frontend — 51 endpoints across 9 resource domains, all deciding "who's allowed to do what" in exactly one place.</span></li>
     </ul>
   </div>
 </section>
@@ -95,18 +108,18 @@
     <div class="rail"><span class="rail-label">Screenshots</span></div>
     <div>
       <div class="shot-grid">
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Dependency graph view</span>
           <span class="sub">Screenshot to be added</span>
         </div>
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Pending-approval workflow</span>
           <span class="sub">Screenshot to be added</span>
         </div>
       </div>
-      <div class="note-box" style="margin-top:28px;">
+      <div class="note-box reveal-up" style="margin-top:28px;">
         <strong>Note:</strong> the live backend runs on free-tier hosting and spins down after inactivity — the first request after a while can take up to ~30s to wake up.
       </div>
     </div>
@@ -114,7 +127,7 @@
 </section>
 
 <div class="container proj-nextlink">
-  <a class="proj-next-card" href="netguard.html">
+  <a class="proj-next-card reveal-up" href="netguard.html">
     <div>
       <div class="label">Next project</div>
       <h4>NetGuard →</h4>
@@ -128,6 +141,8 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

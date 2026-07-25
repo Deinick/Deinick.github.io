@@ -6,12 +6,25 @@
 <title>FutureSpend — Nikolay Deinego</title>
 <meta name="description" content="FutureSpend: a calendar-driven spending forecaster built in 24 hours at Mountain Madness, predicting spend by category from upcoming events.">
 <link rel="icon" type="image/png" href="../images/favicon.png">
+<script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+<div id="preloader">
+  <div class="pl-name"><span>Nikolay Deinego</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+</div>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-arrow">
+    <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M2 2L2 19L6.5 14.5L9.5 21L12.5 19.5L9.5 13H17L2 2Z" fill="currentColor"/></svg>
+  </div>
+  <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
+</div>
 
 <div class="nav-wrap">
   <nav class="nav">
@@ -38,7 +51,7 @@
     Back to projects
   </a>
   <p class="eyebrow">Hackathon — Mountain Madness, SFU CSSS — 24 Hours — March 2026</p>
-  <h1>FutureSpend</h1>
+  <h1><span class="tl"><span>FutureSpend</span></span></h1>
   <p class="proj-hook">Calendar-Driven Spending Forecaster — connects a user's calendar to a spending forecast, predicting likely spend by category from upcoming events and surfacing insights, savings challenges, and an AI coach.</p>
 
   <div class="proj-meta-row">
@@ -68,8 +81,8 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Story</span></div>
     <div class="prose">
-      <p>FutureSpend was built at Mountain Madness 2026, a 24-hour hackathon held March 1 and sponsored in part by RBC. Rather than a single fixed theme, teams chose from several open tracks and competed within smaller, focused categories; the team's track was RBC-aligned financial tooling. The system connects a user's calendar to a spending forecast, predicting likely spend by category from upcoming events and surfacing insights, savings challenges, and an AI coach.</p>
-      <p>Extending this project further would mean building a native mobile application and revisiting the visual design for something more distinctive under less time pressure.</p>
+      <p class="reveal-up">FutureSpend was built at Mountain Madness 2026, a 24-hour hackathon held March 1 and sponsored in part by RBC. Rather than a single fixed theme, teams chose from several open tracks and competed within smaller, focused categories; the team's track was RBC-aligned financial tooling. The system connects a user's calendar to a spending forecast, predicting likely spend by category from upcoming events and surfacing insights, savings challenges, and an AI coach.</p>
+      <p class="reveal-up">Extending this project further would mean building a native mobile application and revisiting the visual design for something more distinctive under less time pressure.</p>
     </div>
   </div>
 </section>
@@ -78,10 +91,10 @@
   <div class="container proj-body">
     <div class="rail"><span class="rail-label">Technical Highlights</span></div>
     <ul class="highlights">
-      <li><span class="n">01</span><span><strong>End-to-end backend pipeline.</strong> Owned the backend pipeline under a 24-hour deadline: calendar events flow through a feature-extraction layer into a rule-based prediction engine, chosen over ML for reliability with zero labelled training data.</span></li>
-      <li><span class="n">02</span><span><strong>API contract design.</strong> Designed and documented the API contract for the team, writing API.md with endpoint specs, request/response shapes, and examples so teammates could build the frontend independently.</span></li>
-      <li><span class="n">03</span><span><strong>Full-stack integration.</strong> Built the integration layer connecting the Next.js frontend to the backend via api.ts, wiring 5 pages from static mocks to live API calls, with a graceful mock-data fallback for reliability.</span></li>
-      <li><span class="n">04</span><span><strong>Automated test suite.</strong> Backed the pipeline with a 277-line automated test suite covering the full request flow, plus separate import and data-validation tests.</span></li>
+      <li class="reveal-up"><span class="n">01</span><span><strong>End-to-end backend pipeline.</strong> Owned the backend pipeline under a 24-hour deadline: calendar events flow through a feature-extraction layer into a rule-based prediction engine, chosen over ML for reliability with zero labelled training data.</span></li>
+      <li class="reveal-up"><span class="n">02</span><span><strong>API contract design.</strong> Designed and documented the API contract for the team, writing API.md with endpoint specs, request/response shapes, and examples so teammates could build the frontend independently.</span></li>
+      <li class="reveal-up"><span class="n">03</span><span><strong>Full-stack integration.</strong> Built the integration layer connecting the Next.js frontend to the backend via api.ts, wiring 5 pages from static mocks to live API calls, with a graceful mock-data fallback for reliability.</span></li>
+      <li class="reveal-up"><span class="n">04</span><span><strong>Automated test suite.</strong> Backed the pipeline with a 277-line automated test suite covering the full request flow, plus separate import and data-validation tests.</span></li>
     </ul>
   </div>
 </section>
@@ -91,18 +104,18 @@
     <div class="rail"><span class="rail-label">Screenshots</span></div>
     <div>
       <div class="shot-grid">
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Spending forecast dashboard</span>
           <span class="sub">Screenshot to be added</span>
         </div>
-        <div class="placeholder-shot">
+        <div class="placeholder-shot reveal-up">
           <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
           <span class="cap">Savings challenges &amp; AI coach</span>
           <span class="sub">Screenshot to be added</span>
         </div>
       </div>
-      <div class="note-box" style="margin-top:28px;">
+      <div class="note-box reveal-up" style="margin-top:28px;">
         <strong>Note:</strong> the live backend runs on Render's free tier and may spin down after inactivity — the first request can take 30–60 seconds. This repository is a fork of the team's shared project.
       </div>
     </div>
@@ -110,7 +123,7 @@
 </section>
 
 <div class="container proj-nextlink">
-  <a class="proj-next-card" href="maturin.html">
+  <a class="proj-next-card reveal-up" href="maturin.html">
     <div>
       <div class="label">Back to the beginning</div>
       <h4>Maturin →</h4>
@@ -124,6 +137,8 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>
