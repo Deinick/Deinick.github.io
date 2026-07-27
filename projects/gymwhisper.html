@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GymWhisper — Nikolay Deinego</title>
+<meta name="description" content="GymWhisper: hands-free, voice-powered workout logging in the browser — speech recognition plus Google Gemini convert spoken descriptions into structured workout data.">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="../images/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../images/favicon/site.webmanifest">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
+<script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pl-name"><span>Nikolay Deinego</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+</div>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-arrow">
+    <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M2 2L2 19L6.5 14.5L9.5 21L12.5 19.5L9.5 13H17L2 2Z" fill="currentColor"/></svg>
+  </div>
+  <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
+</div>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="nav-logo" href="../index.html">Nikolay Deinego</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="dot"></span><span class="toggle-label">Dark</span>
+    </button>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</div>
+
+<header class="proj-hero container">
+  <a class="proj-back" href="../projects.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17H15M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to projects
+  </a>
+  <p class="eyebrow">Personal Project — Voice + AI</p>
+  <h1><span class="tl"><span>GymWhisper</span></span></h1>
+  <p class="proj-hook">Hands-free workout logging through natural-language voice input. Users tap a microphone, describe their workout in spoken words, and the app converts speech into structured workout data using AI — all running in the browser.</p>
+
+  <div class="proj-meta-row">
+    <span class="tag">React 19</span><span class="tag">React Router (HashRouter)</span><span class="tag">Google Gemini API</span>
+    <span class="tag">react-speech-recognition</span><span class="tag">Framer Motion</span><span class="tag">GitHub Pages</span>
+  </div>
+
+  <div class="proj-links">
+    <a class="btn primary" href="https://deinick.github.io/Gym-Whisper/" target="_blank" rel="noopener">Live Demo
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a class="btn" href="https://github.com/Deinick/Gym-Whisper" target="_blank" rel="noopener">GitHub
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="proj-visual-hero container" style="padding:0;">
+    <figure class="shot-figure">
+      <div class="video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/NmZBRB72V1Y" title="GymWhisper demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>Voice-powered workout interface — tap the microphone, describe your workout, and GymWhisper converts it into structured sets, reps, and weight.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">Problem &amp; Context</span></div>
+    <div class="prose">
+      <p class="reveal-left">Gym users often need to log exercises while at the gym without typing on their phone. GymWhisper enables hands-free workout logging through voice input, converting natural-language descriptions into structured workout data — exercise type, reps, weight — using AI.</p>
+      <p class="reveal-right">The project demonstrates how modern web APIs (speech recognition) can be combined with AI services (Google Gemini) to create intuitive, privacy-focused user experiences — all client-side, with no backend persistence.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">What It Does</span></div>
+    <ul class="highlights">
+      <li class="reveal-left"><span class="n">01</span><span><strong>Voice-based input.</strong> Browser speech recognition API for hands-free logging.</span></li>
+      <li class="reveal-right"><span class="n">02</span><span><strong>AI transcription &amp; parsing.</strong> Google Gemini API converts natural language into structured CSV workout data.</span></li>
+      <li class="reveal-left"><span class="n">03</span><span><strong>Bilingual support.</strong> Language toggle between English and French.</span></li>
+      <li class="reveal-right"><span class="n">04</span><span><strong>Animated microphone interface.</strong> Visual feedback during recording sessions.</span></li>
+      <li class="reveal-left"><span class="n">05</span><span><strong>Workout review panel.</strong> Review, edit, and finalize workout entries before export.</span></li>
+      <li class="reveal-right"><span class="n">06</span><span><strong>Workout history.</strong> Past sessions plus AI-powered performance reports.</span></li>
+      <li class="reveal-left"><span class="n">07</span><span><strong>Client-side only.</strong> No backend dependencies — all data stays in the browser.</span></li>
+      <li class="reveal-right"><span class="n">08</span><span><strong>Responsive design.</strong> Optimized for both mobile and desktop.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">Architecture</span></div>
+    <div class="prose">
+      <p class="reveal-left">A single-page application using React Router with HashRouter for GitHub Pages compatibility. All workout data is stored in React state and localStorage — there is no backend database. The frontend uses the Web Speech API for voice capture, then sends the transcribed text to the Gemini API for structured parsing into exercise metadata (type, sets, reps, weight).</p>
+      <p class="reveal-right">Operating entirely client-side keeps the app lightweight and privacy-focused, while the bilingual and mobile-first design demonstrates attention to accessibility and real-world use. This project showcases AI integration in frontend applications — how combining speech recognition with LLMs can create intuitive, hands-free interfaces.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container proj-nextlink">
+  <a class="proj-next-card reveal-right" href="maturin.html">
+    <div>
+      <div class="label">Back to the beginning</div>
+      <h4>Maturin →</h4>
+    </div>
+  </a>
+</div>
+
+<footer class="footer-bottom">© 2026 Nikolay Deinego — Computer Science Student, Simon Fraser University</footer>
+
+<button id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../js/vendor/lenis/lenis.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

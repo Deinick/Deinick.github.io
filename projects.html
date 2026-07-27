@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Nikolay Deinego</title>
+<meta name="description" content="All projects by Nikolay Deinego, grouped by domain — full-stack product engineering, and systems &amp; network security.">
+<link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="images/favicon/site.webmanifest">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
+<script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pl-name"><span>Nikolay Deinego</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+</div>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-arrow">
+    <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M2 2L2 19L6.5 14.5L9.5 21L12.5 19.5L9.5 13H17L2 2Z" fill="currentColor"/></svg>
+  </div>
+  <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
+</div>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html">Nikolay Deinego</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="dot"></span><span class="toggle-label">Dark</span>
+    </button>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</div>
+
+<header class="proj-hero container">
+  <a class="proj-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17H15M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to home
+  </a>
+  <p class="eyebrow">All Projects</p>
+  <h1><span class="tl"><span>Projects</span></span></h1>
+  <p class="proj-hook">Everything I've shipped, grouped by domain — full-stack product engineering, and systems &amp; network security.</p>
+
+  <div class="projects-jump">
+    <a href="#fullstack">Full-Stack &amp; Product</a>
+    <a href="#systems-security">Systems &amp; Security</a>
+  </div>
+</header>
+
+<section id="fullstack">
+  <div class="container">
+    <h2 class="category-heading">Full-Stack &amp; Product</h2>
+    <div class="project-list">
+
+      <a class="project-card reveal-diag-l" href="projects/maturin.html">
+        <div class="project-card-body">
+          <div class="project-num">May 2026 – Present</div>
+          <h3>Maturin</h3>
+          <p class="hook">A paper habit-tracker rebuilt into a full project-management tool — diff-based change approval, 3-tier RBAC, dependency-graph phase locking, and live analytics computed on request.</p>
+          <div class="project-tags">
+            <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Express 5</span><span class="tag">PostgreSQL</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/maturin-dashboard.jpg" alt="Maturin daily dashboard" loading="lazy" width="1800" height="1017"></div>
+      </a>
+
+      <a class="project-card reveal-diag-r" href="projects/telusguardai.html">
+        <div class="project-card-body">
+          <div class="project-num">Jan 2025 · 24h Hackathon</div>
+          <h3>TelusGuardAI</h3>
+          <p class="hook">Built in 24 hours: a plain-language query into TELUS network disruptions, answered by a multi-agent pipeline and visualized on a live interactive coverage map.</p>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Leaflet</span><span class="tag">Flask</span><span class="tag">Multi-Agent AI</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/telusguardai-map.jpg" alt="TelusGuardAI coverage map" loading="lazy" width="1800" height="989"></div>
+      </a>
+
+      <a class="project-card reveal-diag-l" href="projects/futurespend.html">
+        <div class="project-card-body">
+          <div class="project-num">Mar 2026 · Mountain Madness Hackathon</div>
+          <h3>FutureSpend</h3>
+          <p class="hook">Connects a user's calendar to a spending forecast — predicting spend by category from upcoming events, with savings challenges and an AI coach.</p>
+          <div class="project-tags">
+            <span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Google Calendar API</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/futurespend-dashboard.jpg" alt="FutureSpend spending forecast dashboard" loading="lazy" width="1800" height="1036"></div>
+      </a>
+
+      <a class="project-card reveal-diag-r" href="projects/gymwhisper.html">
+        <div class="project-card-body">
+          <div class="project-num">Personal Project</div>
+          <h3>GymWhisper</h3>
+          <p class="hook">Hands-free workout logging — describe your workout out loud and AI converts it into structured sets, reps, and weight, entirely client-side.</p>
+          <div class="project-tags">
+            <span class="tag">React 19</span><span class="tag">Speech Recognition</span><span class="tag">Google Gemini</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/gymwhisper-thumb.jpg" alt="GymWhisper voice-driven workout logging demo" loading="lazy" width="1280" height="720"></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="systems-security">
+  <div class="container">
+    <h2 class="category-heading">Systems &amp; Security</h2>
+    <div class="project-list">
+
+      <a class="project-card reveal-diag-r" href="projects/netguard.html">
+        <div class="project-card-body">
+          <div class="project-num">Oct – Dec 2025</div>
+          <h3>NetGuard</h3>
+          <p class="hook">See the Wire, Stop the Threat — a real-time intrusion detection system built from raw sockets up, with scan/flood/anomaly detection and a live 5-panel terminal dashboard.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">AF_PACKET</span><span class="tag">Rich TUI</span><span class="tag">PyYAML</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/netguard-dashboard.jpg" alt="NetGuard terminal dashboard" loading="lazy" width="1800" height="1236"></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer-bottom">© 2026 Nikolay Deinego — Computer Science Student, Simon Fraser University</footer>
+
+<button id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

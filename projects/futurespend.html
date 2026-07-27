@@ -4,22 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FutureSpend — Nikolay Deinego</title>
-<meta name="description" content="FutureSpend: a calendar-driven spending forecaster built in 24 hours at Mountain Madness, predicting spend by category from upcoming events.">
-<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="description" content="FutureSpend: See Tomorrow, Save Today, Share Success — an AI-powered finance dashboard predicting spend by category from calendar events, with savings challenges and an AI coach.">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="../images/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../images/favicon/site.webmanifest">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
 <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
-<script>(function(){if(sessionStorage.getItem('nd_pt_active')==='1'){document.documentElement.classList.add('pt-incoming');}}());</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -35,21 +31,14 @@
   <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
 </div>
 
-<div class="page-transition" id="pageTransition" data-glb="../assets/katana.glb" aria-hidden="true">
-  <div class="pt-panel" id="ptPanel"></div>
-  <canvas class="pt-canvas" id="ptCanvas"></canvas>
-  <div class="pt-sparkles" id="ptSparkles"></div>
-</div>
-
 <div class="nav-wrap">
   <nav class="nav">
-    <a class="nav-logo" data-transition="katana" href="../index.html">Nikolay Deinego</a>
+    <a class="nav-logo" href="../index.html">Nikolay Deinego</a>
     <ul class="nav-links" id="navLinks">
-      <li><a data-transition="katana" href="../index.html#about">About</a></li>
-      <li><a data-transition="katana" href="../index.html#experience">Experience</a></li>
-      <li><a data-transition="katana" href="../index.html#skills">Skills</a></li>
-      <li><a data-transition="katana" href="../index.html#projects">Projects</a></li>
-      <li><a data-transition="katana" href="../index.html#contact">Contact</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
       <span class="dot"></span><span class="toggle-label">Dark</span>
@@ -61,87 +50,85 @@
 </div>
 
 <header class="proj-hero container">
-  <a class="proj-back" data-transition="katana" href="../index.html#projects">
+  <a class="proj-back" href="../projects.html">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17H15M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Back to projects
   </a>
-  <p class="eyebrow">Hackathon — Mountain Madness, SFU CSSS — 24 Hours — March 2026</p>
+  <p class="eyebrow">Hackathon — Mountain Madness, SFU CSSS &amp; RBC — 24 Hours — March 2026</p>
   <h1><span class="tl"><span>FutureSpend</span></span></h1>
-  <p class="proj-hook">Calendar-Driven Spending Forecaster — connects a user's calendar to a spending forecast, predicting likely spend by category from upcoming events and surfacing insights, savings challenges, and an AI coach.</p>
+  <p class="proj-hook"><strong>See Tomorrow, Save Today, Share Success.</strong> An AI-powered personal finance dashboard that predicts upcoming spending from calendar events — analyzing upcoming events (meals, outings, transport), predicting likely spend by category, and surfacing insights, savings challenges, and an AI coach.</p>
 
   <div class="proj-meta-row">
-    <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Pydantic</span>
-    <span class="tag">Google Calendar API</span><span class="tag">Next.js / TypeScript</span>
+    <span class="tag">Next.js 14</span><span class="tag">React 18</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span>
+    <span class="tag">Recharts / D3 (Sankey)</span><span class="tag">Python 3.11</span><span class="tag">FastAPI</span><span class="tag">Google Gemini</span>
   </div>
 
   <div class="proj-links">
-    <a class="btn primary" href="#" target="_blank" rel="noopener">Live Demo
+    <a class="btn primary" href="https://deinick.github.io/FutureSpend/" target="_blank" rel="noopener">Live Demo
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a class="btn" href="https://github.com/Deinick" target="_blank" rel="noopener">GitHub
+    <a class="btn" href="https://github.com/Deinick/FutureSpend" target="_blank" rel="noopener">GitHub
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
 
   <div class="proj-visual-hero container" style="padding:0;">
-    <div class="placeholder-shot">
-      <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="1.5"/></svg>
-      <span class="cap">Forecast dashboard</span>
-      <span class="sub">Screenshot to be added</span>
-    </div>
+    <figure class="shot-figure">
+      <img class="shot-img" src="../images/projects/futurespend-dashboard.jpg" alt="FutureSpend dashboard showing health score, predicted spend for the week with confidence, savings-challenge points, a predicted-vs-actual spend chart, and a Sankey breakdown by category." loading="lazy" width="1800" height="1035">
+      <figcaption>Financial dashboard with spending forecasts, category insights, and budgeting metrics — a calendar-driven pipeline surfaces upcoming expenses and recommended actions.</figcaption>
+    </figure>
   </div>
 </header>
 
 <section>
   <div class="container proj-body">
-    <div class="rail"><span class="rail-label">Story</span></div>
+    <div class="rail"><span class="rail-label">Problem &amp; Context</span></div>
     <div class="prose">
-      <p class="reveal-left">FutureSpend was built at Mountain Madness 2026, a 24-hour hackathon held March 1 and sponsored in part by RBC. Rather than a single fixed theme, teams chose from several open tracks and competed within smaller, focused categories; the team's track was RBC-aligned financial tooling. The system connects a user's calendar to a spending forecast, predicting likely spend by category from upcoming events and surfacing insights, savings challenges, and an AI coach.</p>
-      <p class="reveal-right">Extending this project further would mean building a native mobile application and revisiting the visual design for something more distinctive under less time pressure.</p>
+      <p class="reveal-left">Calendar-driven financial awareness is often missing: people see their week's spend only after it happens. FutureSpend addresses this by turning a calendar into a spending forecast — built in 24 hours at Mountain Madness 2026, a hackathon held March 1 and sponsored in part by SFU CSSS and RBC. Rather than a single fixed theme, teams chose from several open tracks and competed within smaller, focused categories; the team's track was RBC-aligned financial tooling.</p>
+      <p class="reveal-right">The system analyzes upcoming events (dining, social, transport, entertainment), predicts likely spend by category using a rules-based pipeline, and surfaces insights and recommended actions — e.g. trim one event to stay under budget. Target users are individuals and teams who want a lightweight, calendar-first view of upcoming expenses.</p>
+      <p class="reveal-up">Extending this project further would mean building a native mobile application and revisiting the visual design for something more distinctive under less time pressure.</p>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container proj-body">
-    <div class="rail"><span class="rail-label">Technical Highlights</span></div>
+    <div class="rail"><span class="rail-label">What It Does</span></div>
     <ul class="highlights">
-      <li class="reveal-left"><span class="n">01</span><span><strong>End-to-end backend pipeline.</strong> Owned the backend pipeline under a 24-hour deadline: calendar events flow through a feature-extraction layer into a rule-based prediction engine, chosen over ML for reliability with zero labelled training data.</span></li>
-      <li class="reveal-right"><span class="n">02</span><span><strong>API contract design.</strong> Designed and documented the API contract for the team, writing API.md with endpoint specs, request/response shapes, and examples so teammates could build the frontend independently.</span></li>
-      <li class="reveal-left"><span class="n">03</span><span><strong>Full-stack integration.</strong> Built the integration layer connecting the Next.js frontend to the backend via api.ts, wiring 5 pages from static mocks to live API calls, with a graceful mock-data fallback for reliability.</span></li>
-      <li class="reveal-right"><span class="n">04</span><span><strong>Automated test suite.</strong> Backed the pipeline with a 277-line automated test suite covering the full request flow, plus separate import and data-validation tests.</span></li>
+      <li class="reveal-left"><span class="n">01</span><span><strong>Calendar-driven pipeline.</strong> Mock or real calendar events → parsing → category-based spend prediction → forecast, insights, and challenges.</span></li>
+      <li class="reveal-right"><span class="n">02</span><span><strong>Dashboard.</strong> Health score, 7-day forecast, Sankey diagram by category, spending history, and recommended actions.</span></li>
+      <li class="reveal-left"><span class="n">03</span><span><strong>Challenges &amp; leaderboard.</strong> Join savings challenges, track progress, and compete with friends (mock participants in the demo).</span></li>
+      <li class="reveal-right"><span class="n">04</span><span><strong>Banking (demo).</strong> Checking balance, vaults, lock/unlock funds — wired for RBC-style APIs in production.</span></li>
+      <li class="reveal-left"><span class="n">05</span><span><strong>AI coach.</strong> Chat with an assistant that uses your dashboard context, powered by Google Gemini when a key is configured.</span></li>
+      <li class="reveal-right"><span class="n">06</span><span><strong>Static export.</strong> Frontend builds as a static site for GitHub Pages — no Node server required in production.</span></li>
     </ul>
   </div>
 </section>
 
 <section>
   <div class="container proj-body">
-    <div class="rail"><span class="rail-label">Screenshots</span></div>
-    <div>
-      <div class="shot-grid">
-        <div class="placeholder-shot reveal-diag-l">
-          <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span class="cap">Spending forecast dashboard</span>
-          <span class="sub">Screenshot to be added</span>
-        </div>
-        <div class="placeholder-shot reveal-diag-r">
-          <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span class="cap">Savings challenges &amp; AI coach</span>
-          <span class="sub">Screenshot to be added</span>
-        </div>
-      </div>
-      <div class="note-box reveal-up" style="margin-top:28px;">
-        <strong>Note:</strong> the live backend runs on Render's free tier and may spin down after inactivity — the first request can take 30–60 seconds. This repository is a fork of the team's shared project.
-      </div>
+    <div class="rail"><span class="rail-label">Architecture</span></div>
+    <div class="prose">
+      <p class="reveal-left">Two-tier setup: frontend (Next.js 14 with static export for GitHub Pages) and backend (FastAPI + uvicorn on Render), talking to each other via a configured API URL. Calendar events (mock or Google) are parsed into features, run through a prediction pipeline for category-based spend, then feed the dashboard, insights, challenges, and optional Gemini-powered AI coach. Banking and leaderboard endpoints support the demo experience.</p>
+      <p class="reveal-right">Owned the backend pipeline under the 24-hour deadline: calendar events flow through a feature-extraction layer into a rule-based prediction engine, chosen over ML for reliability with zero labelled training data. Also designed and documented the API contract for the team (endpoint specs, request/response shapes, examples) so teammates could build the frontend independently, and built the integration layer connecting the Next.js frontend to the backend, wiring 5 pages from static mocks to live API calls with a graceful mock-data fallback — backed by a 277-line automated test suite covering the full request flow.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">Note</span></div>
+    <div class="note-box reveal-up">
+      <strong>Note:</strong> the live backend runs on Render's free tier and may spin down after inactivity — the first request can take 30–60 seconds. This repository is a fork of the team's shared project.
     </div>
   </div>
 </section>
 
 <div class="container proj-nextlink">
-  <a class="proj-next-card reveal-right" data-transition="katana" href="maturin.html">
+  <a class="proj-next-card reveal-right" href="gymwhisper.html">
     <div>
-      <div class="label">Back to the beginning</div>
-      <h4>Maturin →</h4>
+      <div class="label">Next project</div>
+      <h4>GymWhisper →</h4>
     </div>
   </a>
 </div>
@@ -154,7 +141,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../js/vendor/lenis/lenis.min.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/transition.js"></script>
 </body>
 </html>

@@ -5,25 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nikolay Deinego — Computer Science Student & Developer</title>
 <meta name="description" content="Nikolay Deinego — CS student at Simon Fraser University focused on systems engineering, network security, and full-stack development.">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="images/favicon/site.webmanifest">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
 <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
-<script>(function(){if(sessionStorage.getItem('nd_pt_active')==='1'){document.documentElement.classList.add('pt-incoming');}}());</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-  }
-}
-</script>
 </head>
 <body>
 
-<div id="preloader">
+<canvas id="webgl-hero" aria-hidden="true"></canvas>
+
+<div id="preloader" data-hero-boot="true">
   <div class="pl-name"><span>Nikolay Deinego</span></div>
   <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
 </div>
@@ -35,20 +33,13 @@
   <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
 </div>
 
-<div class="page-transition" id="pageTransition" data-glb="assets/katana.glb" aria-hidden="true">
-  <div class="pt-panel" id="ptPanel"></div>
-  <canvas class="pt-canvas" id="ptCanvas"></canvas>
-  <div class="pt-sparkles" id="ptSparkles"></div>
-</div>
-
 <div class="nav-wrap">
   <nav class="nav">
     <span class="nav-logo">Nikolay Deinego</span>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -91,18 +82,88 @@
         <div class="value">Vancouver, BC, Canada</div>
       </div>
       <div class="about-meta-item reveal-diag-r">
-        <div class="label">Studying</div>
-        <div class="value">BSc Computer Science, SFU — expected Dec 2027</div>
-      </div>
-      <div class="about-meta-item reveal-right">
         <div class="label">Focus</div>
         <div class="value">Systems &amp; network security, full-stack development</div>
       </div>
-      <div class="about-meta-item reveal-diag-r">
+      <div class="about-meta-item reveal-right">
         <div class="label">Contact</div>
         <div class="value"><a href="mailto:nda76@sfu.ca">nda76@sfu.ca</a></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <h2><span class="tl"><span>Featured</span></span><span class="tl"><span>Projects</span></span></h2>
+    </div>
+    <div class="project-list">
+
+      <a class="project-card reveal-diag-l" href="projects/maturin.html">
+        <div class="project-card-body">
+          <div class="project-num">01 · May 2026 – Present</div>
+          <h3>Maturin</h3>
+          <p class="hook">A paper habit-tracker rebuilt into a full project-management tool — diff-based change approval, 3-tier RBAC, dependency-graph phase locking, and live analytics computed on request.</p>
+          <div class="project-tags">
+            <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Express 5</span><span class="tag">PostgreSQL</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/maturin-dashboard.jpg" alt="Maturin daily dashboard" loading="lazy" width="1800" height="1017"></div>
+      </a>
+
+      <a class="project-card reveal-diag-r" href="projects/netguard.html">
+        <div class="project-card-body">
+          <div class="project-num">02 · Oct – Dec 2025</div>
+          <h3>NetGuard</h3>
+          <p class="hook">See the Wire, Stop the Threat — a real-time intrusion detection system built from raw sockets up, with scan/flood/anomaly detection and a live 5-panel terminal dashboard.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">AF_PACKET</span><span class="tag">Rich TUI</span><span class="tag">PyYAML</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/netguard-dashboard.jpg" alt="NetGuard terminal dashboard" loading="lazy" width="1800" height="1236"></div>
+      </a>
+
+      <a class="project-card reveal-diag-l" href="projects/telusguardai.html">
+        <div class="project-card-body">
+          <div class="project-num">03 · Jan 2025 · 24h Hackathon</div>
+          <h3>TelusGuardAI</h3>
+          <p class="hook">Built in 24 hours: a plain-language query into TELUS network disruptions, answered by a multi-agent pipeline and visualized on a live interactive coverage map.</p>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Leaflet</span><span class="tag">Flask</span><span class="tag">Multi-Agent AI</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/telusguardai-map.jpg" alt="TelusGuardAI coverage map" loading="lazy" width="1800" height="989"></div>
+      </a>
+
+      <a class="project-card reveal-diag-r" href="projects/futurespend.html">
+        <div class="project-card-body">
+          <div class="project-num">04 · Mar 2026 · Mountain Madness Hackathon</div>
+          <h3>FutureSpend</h3>
+          <p class="hook">Connects a user's calendar to a spending forecast — predicting spend by category from upcoming events, with savings challenges and an AI coach.</p>
+          <div class="project-tags">
+            <span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Google Calendar API</span>
+          </div>
+          <span class="project-link">View project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="project-card-image-wrapper"><img class="project-card-image" src="images/projects/futurespend-dashboard.jpg" alt="FutureSpend spending forecast dashboard" loading="lazy" width="1800" height="1036"></div>
+      </a>
+
+    </div>
+    <p class="see-all reveal-up"><a href="projects.html">See all projects
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a></p>
   </div>
 </section>
 
@@ -122,15 +183,6 @@
         <div class="exp-date">Aug 2026 – Apr 2027<br>Incoming</div>
       </div>
 
-      <div class="exp-item reveal-right">
-        <div class="exp-role">
-          <h3>Volunteer Artist</h3>
-          <div class="org">"Special Holidays" Public Fund — Astana, Kazakhstan</div>
-        </div>
-        <p class="exp-desc">Ongoing volunteer with a public fund focused on inclusion and support for children with special needs, contributing to four fund-organized initiatives — including the Presidential Christmas Tree event and a charity lunch for children with special needs.</p>
-        <div class="exp-date">Dec 2024 – Present</div>
-      </div>
-
       <div class="exp-item reveal-diag-l">
         <div class="exp-role">
           <h3>Note Taker</h3>
@@ -147,6 +199,55 @@
         </div>
         <p class="exp-desc">Contracted decor and space designer for New Year holiday installations across Astana — preparing decorations, running quality control against safety standards, and coordinating daily with a team to keep delivery on a fixed schedule.</p>
         <div class="exp-date">Dec 2024<br>Contract</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-head">
+      <h2><span class="tl"><span>Education</span></span></h2>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-item reveal-left">
+        <div class="exp-role">
+          <h3>BSc Computer Science</h3>
+          <div class="org">Simon Fraser University</div>
+        </div>
+        <p class="exp-desc">Coursework split between systems-level engineering, network protocols, and intrusion detection, and full-stack product development.</p>
+        <div class="exp-date">Expected Dec 2027<br>In Progress</div>
+      </div>
+
+      <div class="exp-item reveal-right">
+        <div class="exp-role">
+          <h3>High School Diploma</h3>
+          <div class="org">Kazakhstan</div>
+        </div>
+        <p class="exp-desc">Graduated with a red diploma, awarded for a cumulative GPA of 5.0/5.0 across the final two years of study. Also completed a separate diploma at a specialized music school, pursued alongside regular academic studies.</p>
+        <div class="exp-date">Red Diploma<br>GPA 5.0/5.0</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="volunteering">
+  <div class="container">
+    <div class="section-head">
+      <h2><span class="tl"><span>Volunteering</span></span></h2>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-item reveal-left">
+        <div class="exp-role">
+          <h3>Volunteer Artist</h3>
+          <div class="org">"Special Holidays" Public Fund — Astana, Kazakhstan</div>
+        </div>
+        <p class="exp-desc">Ongoing volunteer with a public fund focused on inclusion and support for children with special needs, contributing to four fund-organized initiatives — including the Presidential Christmas Tree event and a charity lunch for children with special needs.</p>
+        <div class="exp-date">Dec 2024 – Present</div>
       </div>
 
     </div>
@@ -215,77 +316,6 @@
   </div>
 </section>
 
-<section id="projects">
-  <div class="container">
-    <div class="section-head">
-      <h2><span class="tl"><span>Projects</span></span></h2>
-    </div>
-    <div class="project-list">
-
-      <a class="project-card reveal-diag-l" data-transition="katana" href="projects/maturin.html">
-        <div class="project-card-body">
-          <div class="project-num">01 · May 2026 – Present</div>
-          <h3>Maturin</h3>
-          <p class="hook">A paper habit-tracker rebuilt into a full project-management tool — diff-based change approval, 3-tier RBAC, dependency-graph phase locking, and live analytics computed on request.</p>
-          <div class="project-tags">
-            <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Express 5</span><span class="tag">PostgreSQL</span>
-          </div>
-          <span class="project-link">View project
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-        <div class="project-visual v1"><span>Maturin — Project Preview</span></div>
-      </a>
-
-      <a class="project-card reveal-diag-r" data-transition="katana" href="projects/netguard.html">
-        <div class="project-card-body">
-          <div class="project-num">02 · Oct – Dec 2025</div>
-          <h3>NetGuard</h3>
-          <p class="hook">A real-time network intrusion detection system built on raw sockets — self-calibrating baselines, a hot-reloadable rules engine, and a live 5-panel terminal dashboard.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span><span class="tag">Raw Sockets</span><span class="tag">Threading</span><span class="tag">Rich TUI</span>
-          </div>
-          <span class="project-link">View project
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-        <div class="project-visual v2"><span>NetGuard — Project Preview</span></div>
-      </a>
-
-      <a class="project-card reveal-diag-l" data-transition="katana" href="projects/telusguardai.html">
-        <div class="project-card-body">
-          <div class="project-num">03 · Jan 2025 · 24h Hackathon</div>
-          <h3>TelusGuardAI</h3>
-          <p class="hook">Built in 24 hours: a plain-language query into TELUS network disruptions, answered by a multi-agent pipeline and visualized on a live interactive coverage map.</p>
-          <div class="project-tags">
-            <span class="tag">React</span><span class="tag">Leaflet</span><span class="tag">Flask</span><span class="tag">Multi-Agent AI</span>
-          </div>
-          <span class="project-link">View project
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-        <div class="project-visual v3"><span>TelusGuardAI — Project Preview</span></div>
-      </a>
-
-      <a class="project-card reveal-diag-r" data-transition="katana" href="projects/futurespend.html">
-        <div class="project-card-body">
-          <div class="project-num">04 · Mar 2026 · Mountain Madness Hackathon</div>
-          <h3>FutureSpend</h3>
-          <p class="hook">Connects a user's calendar to a spending forecast — predicting spend by category from upcoming events, with savings challenges and an AI coach.</p>
-          <div class="project-tags">
-            <span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Google Calendar API</span>
-          </div>
-          <span class="project-link">View project
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-        <div class="project-visual v4"><span>FutureSpend — Project Preview</span></div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
 <footer class="contact" id="contact">
   <div class="container">
     <p class="eyebrow">Get in touch</p>
@@ -315,7 +345,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis/lenis.min.js"></script>
 <script src="js/main.js"></script>
-<script src="js/transition.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "./js/vendor/three/three.module.min.js",
+    "three/addons/": "./js/vendor/three/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="js/scene.js"></script>
 </body>
 </html>

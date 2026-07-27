@@ -17,3 +17,9 @@
 *.pdf
 Mini-project.md
 wireframe.md
+
+# Dependencies / build output / tooling
+node_modules/
+dist/
+.claude/
+assets/sources/

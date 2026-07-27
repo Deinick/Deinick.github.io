@@ -1,6 +1,32 @@
 (function () {
   var root = document.documentElement;
 
+  /* ---- Smooth scrolling (Lenis) ---- */
+  var lenis = null;
+  if (window.Lenis && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    lenis = new window.Lenis({
+      duration: 1.2,
+      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true,
+    });
+    window.lenis = lenis;
+
+    if (window.gsap) {
+      gsap.ticker.add(function (time) {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+      if (window.ScrollTrigger) {
+        lenis.on("scroll", ScrollTrigger.update);
+      }
+    } else {
+      requestAnimationFrame(function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      });
+    }
+  }
+
   /* ---- Theme toggle ---- */
   var toggle = document.getElementById("themeToggle");
 
@@ -52,7 +78,25 @@
       }
     });
     backToTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (lenis) {
+        lenis.scrollTo(0);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  }
+
+  /* ---- Anchor nav links via Lenis ---- */
+  if (lenis) {
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var id = a.getAttribute("href");
+        if (!id || id === "#") return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target);
+      });
     });
   }
 
@@ -116,7 +160,10 @@
   var preloader = document.getElementById("preloader");
 
   if (window.gsap) {
-    gsap.registerPlugin(ScrollTrigger);
+    var hasScrollTrigger = !!window.ScrollTrigger;
+    if (hasScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+    }
 
     var heroIn = function () {
       gsap.set([".nav-logo", ".nav-links", ".theme-toggle"], { opacity: 0 });
@@ -175,7 +222,7 @@
       .join(", ");
 
     var initScroll = function () {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (!hasScrollTrigger || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         gsap.set(REVEAL_SELECTOR, { opacity: 1, x: 0, y: 0, rotation: 0 });
         gsap.set(".section-head .tl span, .contact-title .tl span", { y: 0 });
         return;
@@ -227,13 +274,26 @@
       window.addEventListener("load", function () {
         ScrollTrigger.refresh();
       });
+      /* Web fonts swap in asynchronously and can reflow text after
+         ScrollTrigger has already cached trigger positions — re-measure
+         once fonts are actually ready so triggers don't fire against
+         stale (pre-reflow) coordinates. */
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          ScrollTrigger.refresh();
+        });
+      }
     };
 
     if (preloader) {
       var plBar = document.getElementById("plBar");
       var plName = document.querySelector(".pl-name span");
 
-      if (sessionStorage.getItem("nd_visited")) {
+      /* The multi-second boot animation is home-page branding only
+         (marked via data-hero-boot) — subpages always reveal instantly,
+         so a project page opened as the first tab of a session doesn't
+         sit blank for ~2s waiting on a preloader it never shows. */
+      if (!preloader.hasAttribute("data-hero-boot") || sessionStorage.getItem("nd_visited")) {
         preloader.style.display = "none";
         heroIn();
       } else {
@@ -263,7 +323,7 @@
     if (preloader) preloader.style.display = "none";
     document
       .querySelectorAll(
-        ".reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-diag-l, .reveal-diag-r, .tl span, .nav-logo, .nav-links, .theme-toggle"
+        ".reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-diag-l, .reveal-diag-r, .tl span, .nav-logo, .nav-links, .theme-toggle, .hero .eyebrow, .proj-hero .eyebrow, .hero-sub, .proj-hook, .hero-badges .badge, .proj-meta-row .tag, .proj-links .btn"
       )
       .forEach(function (el) {
         el.style.opacity = "1";
