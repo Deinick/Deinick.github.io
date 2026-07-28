@@ -27,6 +27,38 @@
     }
   }
 
+  /* ---- Skills carousel: constant px/sec speed regardless of how many
+     tags a category has, so short lists don't feel rushed next to long
+     ones — every card scrolls at the same visual pace. ---- */
+  function initSkillCarousels() {
+    var PX_PER_SEC = 26;
+    var MIN_DURATION = 10;
+    document.querySelectorAll(".skill-carousel").forEach(function (carousel) {
+      var track = carousel.querySelector(".skill-carousel-track");
+      var set = carousel.querySelector(".skill-carousel-set");
+      if (!track || !set) return;
+      var h = set.getBoundingClientRect().height;
+      if (!h) return;
+      var duration = Math.max(MIN_DURATION, h / PX_PER_SEC);
+      track.style.setProperty("--carousel-duration", duration.toFixed(2) + "s");
+    });
+  }
+  if (document.querySelector(".skill-carousel")) {
+    initSkillCarousels();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(initSkillCarousels);
+    }
+    var carouselResizeTimer;
+    window.addEventListener(
+      "resize",
+      function () {
+        clearTimeout(carouselResizeTimer);
+        carouselResizeTimer = setTimeout(initSkillCarousels, 200);
+      },
+      { passive: true }
+    );
+  }
+
   /* ---- Theme toggle ---- */
   var toggle = document.getElementById("themeToggle");
 

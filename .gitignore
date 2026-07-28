@@ -15,6 +15,7 @@
 
 # Coursework / private documents
 *.pdf
+!resume.pdf
 Mini-project.md
 wireframe.md
 

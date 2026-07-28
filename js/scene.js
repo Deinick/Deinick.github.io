@@ -16,14 +16,24 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
   var isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
   var isSmallScreen = window.innerWidth < 780;
 
+  /* Everything below is real work: shader compilation, a PMREM environment
+     bake, and kicking off a 14MB model download. Deferring it past the
+     first couple of paints keeps it from competing with the preloader
+     animation and the hero text reveal for the main thread right when the
+     page loads (or reloads). */
+  function init() {
   var renderer;
   try {
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, powerPreference: "high-performance" });
+    /* antialias is intentionally off: the EffectComposer/bloom pipeline
+       below renders into its own non-multisampled render targets, so MSAA
+       on the base renderer never actually reaches the final frame — it
+       only pays for a heavier WebGL context. */
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, powerPreference: "high-performance" });
   } catch (e) {
     return;
   }
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isSmallScreen ? 1.5 : 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isSmallScreen ? 1.25 : 1.5));
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
@@ -66,6 +76,9 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
   var katanaGroup = new THREE.Group();
   scene.add(katanaGroup);
   var modelLoaded = false;
+  var modelMaterials = [];
+  var modelFadeStart = 0;
+  var MODEL_FADE_MS = 900;
 
   var loader = new GLTFLoader();
   loader.setMeshoptDecoder(MeshoptDecoder);
@@ -83,12 +96,37 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
       var scale = 4.4 / maxDim;
       model.scale.setScalar(scale);
 
+      /* Fade the blade in over time instead of popping in the instant the
+         (large, slow-to-download-and-decode) model finishes loading. */
+      model.traverse(function (o) {
+        if (!o.isMesh || !o.material) return;
+        var mats = Array.isArray(o.material) ? o.material : [o.material];
+        mats.forEach(function (mat) {
+          mat.transparent = true;
+          mat.opacity = 0;
+          modelMaterials.push(mat);
+        });
+      });
+
       var pivot = new THREE.Group();
       pivot.add(model);
       pivot.rotation.z = Math.PI / 3.1;
       pivot.rotation.x = 0.18;
       katanaGroup.add(pivot);
       modelLoaded = true;
+
+      if (prefersReduced) {
+        /* animate() never runs for reduced-motion users, so the one-shot
+           renderFrame() call below fires before this async load resolves —
+           without this, the katana would simply never appear for them. */
+        modelMaterials.forEach(function (mat) {
+          mat.opacity = 1;
+        });
+        modelMaterials.length = 0;
+        renderFrame();
+      } else {
+        modelFadeStart = performance.now();
+      }
     },
     undefined,
     function (err) {
@@ -111,7 +149,7 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
     return new THREE.CanvasTexture(c);
   }
 
-  var PARTICLE_COUNT = isSmallScreen ? 60 : 150;
+  var PARTICLE_COUNT = isSmallScreen ? 36 : 90;
   var positions = new Float32Array(PARTICLE_COUNT * 3);
   var speeds = new Float32Array(PARTICLE_COUNT);
   var sways = new Float32Array(PARTICLE_COUNT);
@@ -149,7 +187,15 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
   /* ---- Post-processing ---- */
   var composer = new EffectComposer(renderer);
   composer.addPass(new RenderPass(scene, camera));
-  var bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.5, 0.6, 0.84);
+  /* Bloom is computed at half resolution — a blur pass this soft doesn't
+     need full-res input, and it's the single most expensive part of the
+     pipeline (several downsampled blur passes run every frame). */
+  var bloom = new UnrealBloomPass(
+    new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2),
+    0.5,
+    0.6,
+    0.84
+  );
   composer.addPass(bloom);
   composer.addPass(new OutputPass());
 
@@ -198,6 +244,7 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
     composer.setSize(w, h);
+    bloom.resolution.set(w / 2, h / 2);
   }
   window.addEventListener("resize", onResize);
 
@@ -232,6 +279,15 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
       katanaGroup.rotation.x = Math.sin(t * 0.3) * 0.025 + targetY * 0.12;
       katanaGroup.position.y = Math.sin(t * 0.55) * 0.08 - scrollProgress * 1.1;
       katanaGroup.position.x = targetX * 0.25;
+
+      if (modelMaterials.length) {
+        var fadeP = Math.min(1, (performance.now() - modelFadeStart) / MODEL_FADE_MS);
+        var eased = 1 - Math.pow(1 - fadeP, 3);
+        for (var mi = 0; mi < modelMaterials.length; mi++) {
+          modelMaterials[mi].opacity = eased;
+        }
+        if (fadeP >= 1) modelMaterials.length = 0;
+      }
     }
 
     camera.position.x = targetX * 0.3;
@@ -257,4 +313,9 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
   } else {
     animate();
   }
+  }
+
+  requestAnimationFrame(function () {
+    requestAnimationFrame(init);
+  });
 })();
