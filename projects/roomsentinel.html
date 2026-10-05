@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Sentinel — Nikolay Deinego</title>
+<meta name="description" content="Room Sentinel: an IoT system that knows when a room is losing heat and says why, where and what to do — five probes, a learned thermal model, and a live 3D heat map on web and mobile.">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" href="../images/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../images/favicon/site.webmanifest">
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
+<script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));}());</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pl-name"><span>Nikolay Deinego</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+</div>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-arrow">
+    <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M2 2L2 19L6.5 14.5L9.5 21L12.5 19.5L9.5 13H17L2 2Z" fill="currentColor"/></svg>
+  </div>
+  <div class="cursor-label"><span class="cursor-label-dot"></span><span id="cursorLabelText">Guest</span></div>
+</div>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="nav-logo" href="../index.html">Nikolay Deinego</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="dot"></span><span class="toggle-label">Dark</span>
+    </button>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</div>
+
+<header class="proj-hero container">
+  <a class="proj-back" href="../projects.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17H15M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to projects
+  </a>
+  <div class="proj-eyebrow-row">
+    <p class="eyebrow">StormHacks 2026 — October 2026</p>
+    <span class="group-badge group-badge-inline" title="Group Project" aria-label="Group Project"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 3.87 4.87A4 4 0 0 1 16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <h1><span class="tl"><span>Room Sentinel</span></span></h1>
+  <p class="proj-hook"><strong>Knows when your room is losing heat — and tells you why, where and what to do.</strong> Five temperature probes stream into a cloud backend that learns how the room normally behaves. When it cools faster than it should, Room Sentinel names the cause (an open window, a heater that stopped, a dead sensor), shows where it's coming from on a live 3D heat map, and pushes a forecast and a fix to your phone.</p>
+
+  <div class="proj-meta-row">
+    <span class="tag">Python 3.12</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy + Alembic</span><span class="tag">TimescaleDB</span>
+    <span class="tag">Grafana Cloud</span><span class="tag">Docker</span><span class="tag">Render</span><span class="tag">three.js</span><span class="tag">GSAP</span><span class="tag">Vercel</span>
+    <span class="tag">Expo (React Native)</span><span class="tag">TypeScript</span><span class="tag">STM32 + FreeRTOS</span><span class="tag">ESP32</span>
+  </div>
+
+  <div class="proj-links">
+    <a class="btn primary" href="https://stormhacks-ten.vercel.app/room-view/" target="_blank" rel="noopener">Live Demo
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a class="btn" href="https://github.com/Deinick/Room-Sentinel" target="_blank" rel="noopener">GitHub
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="proj-visual-hero container" style="padding:0;">
+    <figure class="shot-figure">
+      <img class="shot-img" src="../images/projects/roomsentinel-sensors.jpg" alt="Room Sentinel website: a top-down 3D room with live readings from five probes (room centre, window, heater, door, far wall), a sensor list, the room temperature in a warning state, and simulator controls for outside temperature, window, door, heater and speed." loading="lazy" width="1600" height="871">
+      <figcaption>Live room view — five probes on a 3D model of the room, the current state and trend, and the demo simulator's controls along the bottom.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">Problem &amp; Context</span></div>
+    <div class="prose">
+      <p class="reveal-left">A thermostat only knows one number: the temperature right now. It can't tell a room that's cooling because it's cold outside from one that's cooling because someone left a window open, and it says nothing until the room is already cold. Room Sentinel watches five points in the room instead of one, learns how that particular room normally gains and loses heat, and speaks up as soon as the room stops behaving the way the physics says it should.</p>
+      <p class="reveal-right">Built in a weekend at StormHacks 2026 by a team of four, end to end: a touchscreen controller and Wi-Fi bridge on real hardware, a cloud backend and time-series database, a 3D website, and an iOS and Android app. I owned the detection pipeline and the room simulator, the 3D website, and the mobile app.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">What It Does</span></div>
+    <ul class="highlights">
+      <li class="reveal-left"><span class="n">01</span><span><strong>Learns the room.</strong> A per-device thermal model, <em>expected rate = g·(outside − room) + h·(heater − room) + c</em>, re-fits how leaky the room is (<em>g</em>) and how strongly the heater warms it (<em>h</em>) from the last few hours of data.</span></li>
+      <li class="reveal-right"><span class="n">02</span><span><strong>Finds the cause and the side.</strong> When the room keeps cooling faster than the model can explain, it flags it, and the probe whose gap to the room centre grows fastest shows where the cold is coming from: the window or the door.</span></li>
+      <li class="reveal-left"><span class="n">03</span><span><strong>Catches what a thermostat can't.</strong> Heating that stopped, a failed probe (the DS18B20's −127 and 85 °C error values, impossible readings), and a device that went silent. A hand on a probe is recognised and ignored instead of raising an alarm.</span></li>
+      <li class="reveal-right"><span class="n">04</span><span><strong>Advice, not alarms.</strong> Each problem becomes one tracked issue (opened, escalated, reminded, resolved) with a plain-language fix and a forecast like "below 18 °C in about 25 min", so you get one useful alert instead of one every second.</span></li>
+      <li class="reveal-left"><span class="n">05</span><span><strong>Live 3D heat map.</strong> The website colours a 3D model of the room (and a 2D plan) from the five readings, with heatmap, airflow and haze layers and camera presets for each probe.</span></li>
+      <li class="reveal-right"><span class="n">06</span><span><strong>Mobile app with QR pairing.</strong> An Expo app for iOS and Android: the device shows a QR code, you scan it and confirm, and alerts arrive as push notifications.</span></li>
+      <li class="reveal-left"><span class="n">07</span><span><strong>Physics-based demo mode.</strong> A simulated room where you change the outside temperature, open the window or switch off the heater. It runs through exactly the same detector as real hardware, so anyone can try the live demo without the device.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">Architecture</span></div>
+    <div class="prose">
+      <p class="reveal-left"><strong>Device.</strong> Five DS18B20 probes feed an STM32F407 running FreeRTOS with an ILI9488 touchscreen. It passes readings as JSON over UART to an ESP32 (ESP-IDF), which handles Wi-Fi provisioning, HTTPS pairing, and a TLS WebSocket to the cloud. The device has no clock, so the server timestamps every frame on arrival and acknowledges it.</p>
+      <p class="reveal-right"><strong>Cloud.</strong> A FastAPI backend (Python 3.12, SQLAlchemy and Alembic) runs in Docker on Render, pinned to a single always-on instance because live device sockets are held in process memory. Readings land in TimescaleDB hypertables on Tiger Cloud, and Grafana Cloud provides dashboards and alert rules. The website (three.js and GSAP as plain JavaScript modules with no build step) is hosted on Vercel, and the mobile app gets alerts through Expo Push.</p>
+      <p class="reveal-left"><strong>The pipeline I built.</strong> Every reading, real or simulated, goes through the same five stages: <em>collect</em> (validate and timestamp), <em>analyze</em> (sensor health, device silence, the thermal model), <em>advise</em> (turn each finding into a recommendation), <em>track</em> (one issue per problem across its lifecycle), and <em>notify</em> (push to the owner's phones and update the live view). Because the simulator feeds the same detector, the team could develop and test detection without a physical room, and the public demo runs on it too.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container proj-body">
+    <div class="rail"><span class="rail-label">Screenshots</span></div>
+    <div>
+      <div class="shot-grid shot-grid-3">
+        <figure class="shot-figure reveal-diag-l">
+          <img class="shot-img" src="../images/projects/roomsentinel-window.jpg" alt="Room Sentinel 3D view focused on an open window in demo mode: cold air shown as blue particles and a cool heatmap around the window, with the layers panel open." loading="lazy" width="1600" height="882">
+          <figcaption>Open-window scenario — the heatmap and airflow particles show cold air coming in while the room drops toward its warning limit.</figcaption>
+        </figure>
+        <figure class="shot-figure reveal-diag-r">
+          <img class="shot-img" src="../images/projects/roomsentinel-devices.jpg" alt="Room Sentinel 3D living room with live readings, and a devices panel for naming a paired device and setting its min, target and max temperature." loading="lazy" width="1600" height="883">
+          <figcaption>A live paired device — per-room name and temperature limits next to the 3D model.</figcaption>
+        </figure>
+        <figure class="shot-figure reveal-diag-l">
+          <img class="shot-img" src="../images/projects/roomsentinel-device.jpg" alt="The Room Sentinel hardware: an STM32 touchscreen on a breadboard showing the settings screen with Wi-Fi, account login and the cloud connection status." loading="lazy" width="1280" height="720">
+          <figcaption>The hardware — the STM32 touchscreen controller, connected to the cloud over the ESP32 bridge.</figcaption>
+        </figure>
+      </div>
+      <div class="note-box reveal-up" style="margin-top:28px;">
+        <strong>Note:</strong> the live demo opens in a simulated room, so it works without the hardware. Detection was developed and tested mostly on the simulator; validating it in a real room is the next step. Built by Alezhuq Kutryk, Sergei Naumov, Anton Polamarchuk and Nikolay Deinego.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container proj-nextlink">
+  <a class="proj-next-card reveal-right" href="futurespend.html">
+    <div>
+      <div class="label">Next project</div>
+      <h4>FutureSpend →</h4>
+    </div>
+  </a>
+</div>
+
+<footer class="footer-bottom">© 2026 Nikolay Deinego — Computer Science Student, Simon Fraser University</footer>
+
+<button id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../js/vendor/lenis/lenis.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
